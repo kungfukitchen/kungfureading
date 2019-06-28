@@ -568,6 +568,10 @@ canvas, iframe, img, svg, video {
 	height: 30px
 }
 
+ul.topmenu .icon {
+	height: 20px
+}
+
 .quote {
 	height: 25px
 }
@@ -597,6 +601,15 @@ canvas, iframe, img, svg, video {
 	display: block;
 	white-space: normal;
 	width: 100%
+}
+
+h1.title {
+	padding-top:50%;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
 }
 
 .form--stacked .checkbox, .form--stacked .input, .form--stacked .label, .form--stacked .radio, .form--stacked .select, .form--stacked .textarea {
@@ -1633,7 +1646,7 @@ hr {
 .ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
-	line-height: 1.1em
+	line-height: 1.2chem
 }
 
 .float--left {
@@ -1867,6 +1880,10 @@ input, select, textarea {
 		margin-bottom: .8rem
 	}
 
+	.h1, h1 {
+		font-size: 3.5rem
+	}
+
 .span-6 .square {
 	position: relative
 }
@@ -1886,11 +1903,32 @@ input, select, textarea {
 	bottom: 0
 }
 
+.span-12 .testimonial .square {
+	position: relative
+}
+
+.span-12 .testimonial .square:before {
+	display: block;
+	content: "";
+	width: 100%;
+	padding-top: 48.48485%
+}
+
+.span-12 .testimonial .square>.aspect-ratio__content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0
+}
+
+.heading-font, .ellipsis {
+text-align: center
+}
 
 .font--heading a {
 	color: #fff;
 	font-size: 4rem;
 }
-
 
 }
