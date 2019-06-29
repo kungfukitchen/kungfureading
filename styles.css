@@ -1103,7 +1103,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 	line-height: 1;
 	margin-top: 0;
-	margin-bottom: .8rem;
+	margin-bottom: .5rem;
 	text-rendering: optimizeLegibility
 }
 
@@ -1646,7 +1646,7 @@ hr {
 .ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
-	line-height: 1.2chem
+	line-height: 1.2em
 }
 
 .float--left {
@@ -1696,11 +1696,12 @@ hr {
 	}
 	
 	.h2, h2 {
-		font-size: 1.5rem
+		font-size: 1.2rem
 	}
 	
 	.h3, h3 {
-		font-size: 1.5rem
+		font-size: 1.3rem;
+		margin-bottom: .5em;
 	}
 	
 	.h4, dl, h4, ol, p, ul {
@@ -1715,7 +1716,11 @@ hr {
 		font-size: .677rem
 	}
 	
-	.show-md-to-lg {
+	.heading-font {
+		font-size: 1.5rem;
+	}
+
+.show-md-to-lg {
 		display: none
 	}
 }@media screen and (max-width:950px) and (min-width:680px) {
@@ -1729,6 +1734,11 @@ hr {
 	.h1, h1 {
 		font-size: 3rem
 	}
+
+	.h3, h3 {
+		font-size: 1.2rem
+	}
+
 	.span-12	.h3, .span-12 h3 {
 		font-size: 1rem
 	}
