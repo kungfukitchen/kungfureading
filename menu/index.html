@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html manifest="kungfumenu.manifest">
+<head>
+  <meta charset="utf-8">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=yes" name="format-detection">
+  <meta content="Kungfu Menu" name="apple-mobile-web-app-title">
+  <link href="apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+  <link href="iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+  <link href="iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+  <link href="iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+  <link href="iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+  <link href="iphonexr_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+  <link href="iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+  <title>Kungfu Kitchen Personal Menu Tracker</title>
+  <meta content="Kungfu Kitchen is Reading's most authentic Chinese restaurant. Serving traditional specialities from all regions of China." name="description">
+  <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=0" id="viewport" name="viewport">
+  <style>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+    background: #f5f5f5;
+    color: #4d4d4d;
+    min-width: 230px;
+    max-width: 550px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 300;
+  }
+
+  :focus {
+    outline: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #c00;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .menuapp {
+    background: #fff;
+    margin: -50px 0 20px 0;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+                0 25px 50px 0 rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+  }
+
+  .menuapp .logor {
+  width: 60px;
+  height: 130px;
+  top: 45px;
+  right: 0;
+  position: absolute;
+  z-index: 0;
+  background: top left no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACCCAMAAAC93eDPAAAAA3NCSVQICAjb4U/gAAADAFBMVEX///////////////////////////////////////T3+/n/9/Hx7+/x8OXv6OXu5t3l3tvd3NbUy8b////3+/n/9/Hx7+/x8OXv6OX359ru5t3x3tTl3tvs1s3c1svUy8b////Uy8bQxb3///////T3+/n/9/H/7eLx7+/x8OXv6OXu5t3x3tTl3tvd3Nbs1s3c1svgz8fUy8bfybXQxb3TxLXFv7bNu7PBta7///////T3+/n/9/H/7eLx7+/x8OX/59Hv6OX359ru5t3x3tTl3tv42sXd3Nbs1s3s1cHc1svgz8foyLjfybXUy8bMzMzQxb3TxLXYvbDFv7bNu7Pgtq/RtqLas53Bta7Es6fSr5TSrJu9r6XErJe7rJe+p53UoorCoorBopS0o5nVnHfMmZm2noitnpe3mX2qm4rLknS9lG6rlHq1kIemk4eskIjSgoq2inasi3alinuZjYOsh2ybiHuthmOlhXCbhHHAdHOmemGde2OVem6odVuVdmKcdliLd2yLdGSPdFibalGtYmKVaVaUaUuLaVaCZ1yYYkCNY0aEZEqxVVh/Y1OBYkGWWEGOWUWRWDiEWUJ1XUqCVjd1WEJ8VTd0VTeQSziRSEmNSjOGTCqHTCGDSjNmUUd9ST2YQTl5STF6SihzTCqGRxhqTDiGRDOFRCllTC6JQxCGQSB7Qil7QyF4QTB7QxdzQilyQyFsQyF0QhdsQShsQDOZMzODOSh8OyB/OhisKjmLNDZ4OilfQCt9OwymKzN0OiFtOxh0OhdqPQ5sOiCGMSxfPCF0NQxjOg93MiKcJihgORltMh12MBeNJyVhMyBhMxdmMwBlMRJbMhFVMxBSMR1rKRN/Ih1yJguhFiBgKg9oKQRiKBtaKQZPKhlSKgRkIgBfIhGLEhuQERBaIABTIQRNIhBLIABbGQBAHxBSGQA6Hgh2DAlKGQBCGgJcEQCKAAdPEQBCEAA6EwB2AABMCABmAABCCABMAAA6AwBCAAAzAAApAAAhAAAZAAAAAAAR5ic6AAABAHRSTlMAESIzRFVmd4iIiIiIiIiIiIiIqqqqqqqqqqqqqqqqqru7u93d3d3d3d3d3d3d3d3d3d3d3d3d3d3/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////DxyIDAAAAAlwSFlzAAAK6wAACusBgosNWgAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAUdEVYdENyZWF0aW9uIFRpbWUANy8zLzE5uSm34AAAHcFJREFUeJzVWwtYU+fd/07UkLVdu+1s3b593WRLdZ3WzlpbfZ12tmut19VapaJYi7QIrcUpXmAEQaBcBHHK1QKpJlyO5hxIQijBAiaYBhQYGC6lwUBwAWLagAmGcPIG/N4koIhcu/Z7nu99xCe3c97f+7/fzn/91//jhT24nB/8327PYLJGLyYDfcBk/B+hcG2PL9gb4Onrs8fX98i+YH+vZb99apnPH/EfHgXmOj4+z3P/wVMJYSkxCdmnwk+diooOCgkLD4sN3xuw7Oc/FAoXv53E//VLR+KOc8JPJ8VnyqkrKtEpsaZQlJISfvTwR8eCObERXj8MLTAX4/EFEWFhympeChWfmq1Q1Ncp6iQ3bigUijplg6KoKD09PnzfQU5woP9LThTfKwI3tqenf5xS2X2LJ1IrKuTNzfUKhVAiFObnkyT6TyhRyKvlzaoqeVpaTGTYwfB9W5/Hv09SIATKruzO9nZNlbhGLhpZQrQIkiQREoRDKBJJpdV18vrqenl8SNDH+z3Z3x8pMLflTe18SXW9SCESykWOzVz7Cx17uyAQpPM1XyjkCRWqRmV1+j7fXd7b2Tjz+8CAMf/Yp6FUYrmIEkpJdG7Rvb0lTiqgdxT6guSVFpMSspTkkaKqKlVKSJRvcOgettv3QAgG3tbNr6hAJ6fynUd2/iNdy4lFQmaWDlhthnMy52d5ZHEet4OGgzDNNyFs6X9OCIy5zC4WyWQyhMF15BEiuJjghCAz7QJ/jrfyhIgYJI9q6aWbw9eDvzbSHE7ubrbbf4gBYyX3ZIvRQhDyhfmunQkuWjwe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);
+  background-size: cover;
+  }
+
+  .header {
+  width: 90%;
+  text-align: center;
+  }
+  .header h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 4.5em;
+    line-height: 1em;
+    font-weight: 100;
+    color: #960000;
+    margin-bottom: 0;
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+  }
+
+  .header h1 span {
+  //    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: .4em;
+    margin-top: -10px;
+    display:block;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+  //    padding-left: .5em;
+  }
+
+  .header p {
+  margin: 0 0 2em;
+  font-size: 1.2em;
+  }
+
+
+  .main {
+    border-top: 0 solid #e6e6e6;
+  }
+
+  .info {
+    margin: 25px auto 0;
+    color: #bfbfbf;
+    font-size: 12px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    text-align: center;
+  }
+
+  .info p {
+    line-height: 1;
+  }
+
+  .info a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  .info a:hover {
+    text-decoration: underline;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+    line-height: 1.4em;
+    padding: 15px 15px 15px 70px;
+    -webkit-user-select: none;
+  }
+
+  li:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+
+  li.h2 {
+    padding: 20px 15px 15px;
+    background-color: rgba(0, 0, 0, 0.01);
+    margin: 0;
+    pointer-events: none;
+  }
+
+  li h2 {
+  margin: 0;
+  pointer-events: none;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  white-space: nowrap;
+//  padding-left: 10px;
+  }
+
+  li span {
+    position: absolute;
+    left: 30px;
+    width: 35px;
+    text-align: left;
+  }
+
+  li.n {
+    transition: 0.2s ease-in-out;
+  }
+
+  li.wish{
+    background-color: #fff2ac;
+    transition: 0.2s ease-in-out;
+    border-color: #fff;
+  }
+
+  li.wish:before{
+//    content: "\25CF";
+    float:left;
+    margin-left: -60px;
+    color: #fff;
+  }
+
+  li.eaten{
+    background: #C0FF97;
+    transition: 0.2s ease-in-out;
+    border-color: #fff;
+  }
+
+  li.eaten:before{
+    content: "\2713";
+    float:left;
+    margin-left: -60px;
+    color: #0c0;
+  }
+
+  li.no{
+    background: #fff;
+    transition: 0.2s ease-in-out;
+    color: #FFC8C8;
+    border-color: #eee;
+  //    text-decoration-color: #FFC8C8;
+  //    text-decoration: line-through;
+  }
+
+  li.no:before{
+    content: "\2717";
+    float:left;
+    margin-left: -60px;
+    color: #FFC8C8;
+  }
+
+  h2 ~ li {
+    border-bottom: none;
+  }
+
+  .footer {
+    color: #777;
+    padding: 10px 15px;
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+    margin-top: 20px;
+  }
+
+  .footer:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+                0 8px 0 -3px #f6f6f6,
+                0 9px 1px -3px rgba(0, 0, 0, 0.2),
+                0 16px 0 -6px #f6f6f6,
+                0 17px 2px -6px rgba(0, 0, 0, 0.2);
+  }
+
+  .filters {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    -webkit-user-select: none;
+    text-align: center;
+  //  background-color: rgba(255, 255, 255, .9);
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.65) 90%,rgba(255,255,255,0) 100%);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    max-width: 550px;
+  //    width: 100%;
+    z-index: 999;
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: 1px solid #eee;
+  }
+
+  .filters span {
+    color: inherit;
+    margin: 0 ;
+    padding: 4px 10px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    border-color: rgba(175, 47, 47, 0.1);
+    cursor: pointer;
+  //    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    width: 33.33%;
+    }
+
+  .filters span#wish {
+    background-color: #fff2ac;
+    }
+
+  .filters span#eaten {
+    background-color: #C0FF97;
+    }
+
+  .filters span#all {
+    background-color: #FFC8C8;
+    white-space: nowrap;
+  //    margin-right: 10%;
+    }
+
+  .filters span:hover {
+    border-color: rgba(175, 47, 47, 1);
+  }
+
+  .filters span.selected {
+    border-color: rgba(175, 47, 47, 0.5);
+  }
+
+  .filters span.focus {
+    border-color: Black;
+  }
+
+  form { display:none; }
+
+
+  .modal-window {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  }
+
+  .modal-window:target {
+  opacity: 1;
+  pointer-events: auto;
+  }
+
+  .modal-window a.close {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  }
+
+  .modal-window > div {
+  max-width: 480px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 1.5em;
+  background: #ffffff;
+  }
+
+  .modal-window header {
+  font-weight: bold;
+  }
+
+  .modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+  text-align: center;
+  }
+
+  .modal-window p {
+  font-size: 1.2em;
+  text-align: center;
+  }
+  .modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: -10px;
+  width: 70px;
+  text-decoration: none;
+  }
+  .modal-close:hover {
+  color: black;
+  }
+
+  p.box {
+  background: #eee; padding: 4px 2px; border: 1px dotted #c00; font-size: 1.2em; text-align: left;
+  }
+
+  .container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  }
+
+  .modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+  }
+
+  small {
+  color: #aaa;
+  }
+
+  @media only screen
+  and (min-device-width : 375px)
+  and (max-device-width : 667px)
+  and (orientation : portrait) {
+
+  .modal-window > div {
+  width: 90% !important;
+  padding: 1em;
+  }
+
+  .modal-window p {
+  font-size: 1em;
+  }
+
+  .modal-window h1 {
+  font-size: 120%;
+  margin: 0 0 15px;
+  }
+
+  li.h2 {
+  //text-align:center;
+  }
+
+  .filters {
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+    line-height: 1em;
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.65) 90%,rgba(255,255,255,0) 100%);
+    position: sticky;
+    top: 0;
+    max-width: 550px;
+  //    width: 100%;
+  }
+
+  .filters span {
+    margin: 0 ;
+    padding: 2px 4px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: .8em;
+    line-height: 20px;
+    white-space: nowrap;
+  //    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+  }
+
+  .menuapp {
+  padding-top: 30px;
+  }
+
+  .menuapp .logor {
+      width: 60px;
+      height: 100px;
+      top: 45px;
+      right: 0;
+      position: absolute;
+      background-size: auto;
+      z-index: 0;
+  }
+
+  .header h1 {
+    font-size: 3em;
+    margin-bottom:
+  }
+
+  .header h1 span {
+      font-size: .35em;
+      white-space: nowrap;
+      letter-spacing: .3em
+    }
+
+    .header p {
+      font-size: 12px;
+      margin-bottom: 1em;
+    }
+    li h2 {
+          font-size: 1.2em;
+    }
+
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 812px) and (orientation: landscape) {
+  html {
+    opacity: 0.1;
+  }
+
+  html:before {
+    content:url("data:image/png;base64,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");
+    position:absolute;
+    margin: 50%;
+  }
+
+  }
+  </style>
+</head>
+<body ontouchstart="">
+  <section class="menuapp">
+    <div class="logor"></div>
+    <header class="header">
+      <h1><span>Personal Menu Tracker</span></h1>
+      <p>What did you eat? Tap & keep track! <a href="#help" style="font-weight: bold; margin-left: 5px;">HELP? 帮?</a></p>
+    </header>
+    <div class="filters" id="filters">
+      <span id="wish" onclick="viewall(); wishonly(); return false;" title="Click to see the dishes you want to try!">YOUR WISHLIST: 0</span> <span id="eaten" onclick="viewall(); eatonly(); return false;" title="Click to see the dishes you have tried!">YOU LIKED: 0</span> <span id="all" onclick="viewall(); return false;" title="Click to view the full menu.">VIEW ALL 150</span>
+    </div>
+    <ul id="theMenu">
+      <li class="h2">
+        <h2>STARTERS &#x1F95F;</h2>
+      </li>
+      <li class="n"><span>A.</span>Colourful Prawn Crackers</li>
+      <li class="n"><span>B.</span>Vegetable Spring Rolls</li>
+      <li class="n"><span>C.</span>Chicken Wings</li>
+      <li class="h2">
+        <h2>COLD DISHES &#x1F976;</h2>
+      </li>
+      <li class="n"><span>1.</span>Beef and Beef Tripe in Chilli Oil / 夫妻肺片</li>
+      <li class="n"><span>2.</span>Beef in Chilli and Soy Sauce / 酱牛肉</li>
+      <li class="n"><span>3.</span>Xinjiang Style Shredded Chicken / 新疆手撕椒麻鸡</li>
+      <li class="n"><span>4.</span>Chicken Feet in Pickled Soup / 泡椒凤爪</li>
+      <li class="n"><span>5.</span>Steamed Chicken Strips with Chilli Sauce / 金牌口水鸡</li>
+      <li class="n"><span>6.</span>Pig Ears with Chef Special Chilli sauce / 凉拌猪耳朵</li>
+      <li class="n"><span>7.</span>Sliced Pork with Garlic and Chilli Sauce / 蒜泥白肉</li>
+      <li class="n"><span>8.</span>Shredded Tripe with Chilli Sauce / 红油肚丝</li>
+      <li class="n"><span>9.</span>Spinach and Peanut Salad with Vinegar Sauce / 老醋菠菜花生</li>
+      <li class="n"><span>10.</span>Shredded Cooked Pork with Jelly Sheet / 肉丝拉皮</li>
+      <li class="n"><span>11.</span>Cucumber in Garlic Sauce / 蒜泥黄瓜</li>
+      <li class="n"><span>12.</span>Shredded Potato Salad / 凉拌土豆丝</li>
+      <li class="n"><span>13.</span>Chicken with Ginger & Soy Sauce Topping / 姜葱霸王鸡</li>
+      <li class="n"><span>14.</span>Seaweed Salad / 凉拌海带丝</li>
+      <li class="h2">
+        <h2>SALT & PEPPER DISHES &#x1F336;</h2>
+      </li>
+      <li class="n"><span>15.</span>Salt and Pepper King Prawns / 椒盐大虾</li>
+      <li class="n"><span>16.</span>Salt and Pepper Squid / 椒盐鱿鱼</li>
+      <li class="n"><span>17.</span>Salt and Pepper Chicken Wings / 椒盐鸡翅</li>
+      <li class="n"><span>18.</span>Salt and Pepper Fried Tofu / 椒盐豆腐</li>
+      <li class="n"><span>19.</span>Salt and Pepper Pork Ribs / 椒盐排骨</li>
+      <li class="n"><span>20.</span>Salt and Pepper Pork Fillet / 椒盐里脊</li>
+      <li class="h2">
+        <h2>SOUP DISHES &#x1F372;</h2>
+      </li>
+      <li class="n"><span>21.</span>Hot & Sour Soup / 酸辣汤</li>
+      <li class="n"><span>22.</span>Seaweeds & Egg Soup / 紫菜蛋花汤</li>
+      <li class="n"><span>23.</span>Creamy Sweet Corn Soup / 玉米羹</li>
+      <li class="n"><span>24.</span>Tomato Egg Soup / 西红柿蛋花汤</li>
+      <li class="n"><span>25.</span>Pork Ribs Seaweed Soup / 排骨海带汤</li>
+      <li class="n"><span>26.</span>West Lake Style Beef Soup / 西湖牛肉羹</li>
+      <li class="n"><span>27.</span>Fish Fillet with Tofu Soup / 鱼片豆腐汤</li>
+      <li class="n"><span>28.</span>Spare Ribs with Winter Melon Soup / 冬瓜排骨汤</li>
+      <li class="n"><span>29.</span>Shandong Style Lamb Soup / 山东炖全羊汤</li>
+      <li class="h2">
+        <h2>FISH & SEAFOOD &#x1F41F;</h2>
+      </li>
+      <li class="n"><span>30.</span>Braised Butterfish / 红烧鲳鱼</li>
+      <li class="n"><span>31.</span>Steamed Sea Bass with Soy Sauce Topping / 清蒸鲈鱼</li>
+      <li class="n"><span>32.</span>Boiled Fish Fillet in Hot & Spicy Sauce / 沸腾水煮鱼</li>
+      <li class="n"><span>33.</span>Fish Fillet Cooked with Thai Pickled Cabbages / 特色酸菜鱼</li>
+      <li class="n"><span>34.</span>Hot & Spicy Shell on King Prawns / 香辣大虾</li>
+      <li class="n"><span>35.</span>French Salad Style Shell off King Prawns / 法式沙拉虾</li>
+      <li class="n"><span>36.</span>Sweet Sour King Prawns / 宫保大虾</li>
+      <li class="n"><span>37.</span>Stir Fried Sliced Whelks with Chilli Sauce / 老干妈爆螺片</li>
+      <li class="n"><span>38.</span>Hot & Spicy Crayfish / 麻辣小龙虾</li>
+      <li class="n"><span>39.</span>Sichuan Style Grilled Fish with Vegetables and Tofu / 巴蜀烤鱼</li>
+      <li class="n"><span>40.</span>Deep Fried Fish Fillet in Hot Spicy Pot / 麻辣香锅片片鱼</li>
+      <li class="n"><span>41.</span>Sweet Sour Fish Fillet Slices / 咕唠鱼片</li>
+      <li class="h2">
+        <h2>SPECIAL POTS &#x1F372;</h2>
+      </li>
+      <li class="n"><span>42.</span>Griddle Cooked Spare Ribs</li>
+      <li class="n"><span>43.</span>Griddle Shredded Cabbage</li>
+      <li class="n"><span>44.</span>Griddle Cooked Fish Fillets</li>
+      <li class="n"><span>45.</span>Griddle Cooked/Stir Fry Pork Intestines</li>
+      <li class="n"><span>46.</span>Griddle Cooked King Prawn</li>
+      <li class="n"><span>47.</span>Griddle Cooked Squid Tentacles</li>
+      <li class="n"><span>48.</span>Griddle Cauliflower</li>
+      <li class="n"><span>49.</span>Hot & Spicy Pot with your own choice</li>
+      <li class="n"><span>50.</span>Beef Tripe, Tofu and LunchMeat in Spicy Sauce</li>
+      <li class="h2">
+        <h2>BEEF &#x1F42E;</h2>
+      </li>
+      <li class="n"><span>51.</span>Stir Fry Beef with Fresh Chilli</li>
+      <li class="n"><span>52.</span>Chef Special Beef</li>
+      <li class="n"><span>53.</span>Stir Fried Beef with Cumin</li>
+      <li class="n"><span>54.</span>Beef in Black Pepper</li>
+      <li class="n"><span>55.</span>Beef in Oyster Sauce</li>
+      <li class="n"><span>56.</span>Stewed Beef Brisket with Tomato</li>
+      <li class="n"><span>57.</span>Water Boiled Pork Slices in Hot & Spicy Sauce</li>
+      <li class="n"><span>58.</span>Beef with Pickled Cabbage, Needle Mushroom</li>
+      <li class="n"><span>59.</span>Stir Fry Beef Tripes with Fresh Chilli</li>
+      <li class="h2">
+        <h2>LAMB &#x1F411;</h2>
+      </li>
+      <li class="n"><span>60.</span>Lamb cooked with Pickled Cabbage, Needle Mushroom</li>
+      <li class="n"><span>61.</span>Fried Lamb Chops with Laoganma Chilli Sauce and Cumin</li>
+      <li class="n"><span>62.</span>Stir Fried Lamb with Cumin</li>
+      <li class="n"><span>63.</span>Stir Fried Mixed Lamb, Tripes, Heart, Liver and Lungs with Fresh Chilli and Coriander</li>
+      <li class="n"><span>64.</span>Stir Fried Lamb with Leeks and Coriander</li>
+      <li class="n"><span>65.</span>Stir Fried Lamb Tripes with Coriander</li>
+      <li class="h2">
+        <h2>CHICKEN &#x1F414;</h2>
+      </li>
+      <li class="n"><span>66.</span>Sichuan Style Fried Spicy Chicken</li>
+      <li class="n"><span>67.</span>Kung Pao Chicken</li>
+      <li class="n"><span>68.</span>Stewed Chicken with Three Cups Sauces</li>
+      <li class="n"><span>69.</span>Stir Fried Chicken Gizzards with Bullet Chilli</li>
+      <li class="n"><span>70.</span>Stir Fried Chicken Gizzards with Cumin and Coriander</li>
+      <li class="n"><span>71.</span>Xinjiang Style Spicy Chicken with Vegetables & Noodles</li>
+      <li class="n"><span>72.</span>Shandong Style Stir Fried Chicken</li>
+      <li class="n"><span>73.</span>Sweet and Sour Chicken with Pineapple</li>
+      <li class="n"><span>148.</span>Chicken in Oyster Sauce</li>
+      <li class="h2">
+        <h2>PORK &#x1F43D;</h2>
+      </li>
+      <li class="n"><span>74.</span>Stir Fried Pork with Fresh Chilli</li>
+      <li class="n"><span>75.</span>Water Boiled Pork Slices in Hot & Spicy Sauce</li>
+      <li class="n"><span>77.</span>DongBei Style Sweet and Sour Pork</li>
+      <li class="n"><span>78.</span>Pork in Sweet Bean Sauce+ Pancake</li>
+      <li class="n"><span>79.</span>Fish Fragrant Pork</li>
+      <li class="n"><span>80.</span>Shredded Pork and Eggs with Black Fungus</li>
+      <li class="n"><span>81.</span>Garlic Shoot with Shredded Pork</li>
+      <li class="n"><span>82.</span>Chef Special Ribs</li>
+      <li class="n"><span>83.</span>Sweet Sour Pork Cooked with Pineapple</li>
+      <li class="n"><span>84.</span>Hot and Spicy Ribs</li>
+      <li class="n"><span>85.</span>Braised Belly Pork</li>
+      <li class="n"><span>86.</span>Dongpo Style Pig Shoulder</li>
+      <li class="n"><span>87.</span>Szechuan Style Twice Cooked Pork</li>
+      <li class="n"><span>88.</span>Hot and Spicy Pig’s feet</li>
+      <li class="n"><span>89.</span>Stir Fried Pig’s Feet</li>
+      <li class="n"><span>90.</span>Stir Fried Pig’s Intestines & black fungus</li>
+      <li class="n"><span>91.</span>Braised Cabbage, Tofu, Vermicelli with Plain Boiled Pork (Soup Style)</li>
+      <li class="n"><span>92.</span>Pork with Chinese Leafs and Sweet Potato Noodles (Soup)</li>
+      <li class="h2">
+        <h2>VEG & TOFU &#x1F346;</h2>
+      </li>
+      <li class="n"><span>93.</span>Mapo Tofu</li>
+      <li class="n"><span>94.</span>Delicious Fried Tofu</li>
+      <li class="n"><span>95.</span>Home Style Tofu</li>
+      <li class="n"><span>96.</span>Crab Roe Flavour Japanese Tofu</li>
+      <li class="n"><span>97.</span>King Prawns cooked with Japanese Tofu</li>
+      <li class="n"><span>98.</span>Creamy Chinese Leaf Soup</li>
+      <li class="n"><span>99.</span>Creamy Spinach Soup</li>
+      <li class="n"><span>100.</span>Traditional Cooking Way of Chinese Leaf</li>
+      <li class="n"><span>101.</span>Sweet and Sour Deep Fried Aubergines</li>
+      <li class="n"><span>102.</span>Braised Aubergines</li>
+      <li class="n"><span>103.</span>Fish Fragrant Aubergines</li>
+      <li class="n"><span>104.</span>Stir Fried Potatoes, Peppers and Aubergines</li>
+      <li class="n"><span>105.</span>Stir Fried Fine Beans</li>
+      <li class="n"><span>106.</span>Deep Fried Long Green Pepper</li>
+      <li class="n"><span>107.</span>Stir Fried Tear Cabbages</li>
+      <li class="n"><span>108.</span>Stir Fried Shredded Potatoes</li>
+      <li class="n"><span>109.</span>Hot and Sour Shredded Potatoes</li>
+      <li class="n"><span>110.</span>Stir Fried Tofu Sheet</li>
+      <li class="n"><span>111.</span>Stir Fry Tomatoes with Eggs</li>
+      <li class="n"><span>112.</span>Stir Fry Broccoli with fresh Garlic</li>
+      <li class="n"><span>113.</span>Stir Fry Lettuce with Fresh Garlic</li>
+      <li class="n"><span>115.</span>Garlic Sprout with Eggs</li>
+      <li class="n"><span>116.</span>Stir Fry Pak Choi with Fresh Garlic</li>
+      <li class="n"><span>117.</span>Five Spices Edamame Beans</li>
+      <li class="n"><span>118.</span>Stir Fry Seasonal Vegetables</li>
+      <li class="n"><span>119.</span>Deep Fried Sweet Potato Strips coated with Sugar</li>
+      <li class="h2">
+        <h2>RICE & CHIPS &#x1F35A;</h2>
+      </li>
+      <li class="n"><span>120.</span>Boiled Rice</li>
+      <li class="n"><span>121.</span>Egg Fried Rice</li>
+      <li class="n"><span>123.</span>Yang Chow Egg Fried Rice</li>
+      <li class="n"><span>124.</span>Seafood Egg Fried Rice</li>
+      <li class="n"><span>125.</span>Fried Beef Rice</li>
+      <li class="n"><span>126.</span>Chicken Leg Meat Rice</li>
+      <li class="n"><span>128.</span>Singapore Egg Fried Rice</li>
+      <li class="n"><span>129.</span>Braised Chicken Leg Rice</li>
+      <li class="n"><span>149.</span>Chips</li>
+      <li class="n"><span>150.</span>Chips with Cheese</li>
+      <li class="h2">
+        <h2>NOODLES &#x1F35C;</h2>
+      </li>
+      <li class="n"><span>128.</span>Dumplings in Sour and Spicy Soup</li>
+      <li class="n"><span>129.</span>Meat/Vegetable Dumplings</li>
+      <li class="n"><span>130.</span>Fried Dumplings</li>
+      <li class="n"><span>131.</span>Beijing Fried Bean Paste Noodles</li>
+      <li class="n"><span>132.</span>Special Ingredient Noodles</li>
+      <li class="n"><span>133.</span>Hometown Style Noodles with Spring Onions and Egg</li>
+      <li class="n"><span>134.</span>Shandong Style Hand Made Noodles</li>
+      <li class="n"><span>135.</span>Sichuan Style Noodles with Peppery Sauce</li>
+      <li class="n"><span>136.</span>Braised Beef Noodles</li>
+      <li class="n"><span>137.</span>Braised Beef Flank Noodles</li>
+      <li class="n"><span>138.</span>Braised Pork Ribs Noodles</li>
+      <li class="n"><span>139.</span>Stir Fried Beef and Rice Noodles</li>
+      <li class="n"><span>140.</span>Chef Special Chinese Pancakes</li>
+      <li class="n"><span>142.</span>Soy Milk and 3 Chinese Donuts</li>
+      <li class="n"><span>144.</span>Stir Fry Udon with Vegetables</li>
+      <li class="n"><span>145.</span>Stir Fry Udon with Chicken</li>
+      <li class="n"><span>146.</span>Stir Fry Udon with Beef</li>
+      <li class="n"><span>147.</span>Stir Fry Udon with Pork</li>
+    </ul>
+    <footer class="footer">
+      <h3>Follow us @KungfuReading on<br>
+      <a href="https://twitter.com/kungfureading">Twitter</a> and <a href="https://instagram.com/kungfureading">Instagram</a></h3>
+      <p><b>&copy; Kungfu Kitchen</b> | 07587 577966<br>
+      <a href="mailto:%20info@kungfureading.co.uk?subject=Kungfu%20Menu%20App">info@kungfureading.co.uk</a> | <a href="https://kungfureading.co.uk">kungfureading.co.uk</a><br>
+      80 Christchurch Road, Reading, RG2 7AZ</p>
+    </footer>
+    <form>
+      <label for="inputItem" id="inputLabel"></label> <input id="inputItem"> <button id="addItem">Submit</button>
+    </form>
+  </section>
+  <footer class="info" onclick="location.reload();">
+    <p>DISCLAIMER: The Kungfu Kitchen Personal Menu Tracker app does not transmit any information or associated metadata. All processing is done on your device. Your personal data is not stored or shared with Kungfu Kitchen. All data and menu choices are stored on your phone, if you delete the app or your phone malfunctions you will lose your menu history. No warranty or guarantees are offered or implied.</p>
+    <p>built by <a href="https://mirabiliamedia.com">mm</a> combining code <a href="https://tonyedwardspz.co.uk/blog/tutorial-offline-todo-list-web-application-part-1/">@tonyedwardspz</a> + css <a href="https://github.com/tastejs/todomvc">@todomvc</a></p>
+    <p><button onclick="resetMenu()">RESET YOUR MENU</button></p>
+  </footer>
+  <div class="modal-window" id="help">
+    <a class="close" href="#"></a>
+    <div>
+      <p class="box"><span style="font-size: 2em; float: left; clear: left; display: block; padding: 0.4em .1em 0 0;">&#x1f4f2;</span>Add our Menu App to your Home Screen for quick access! Tap the share icon <img alt="share icon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIyNHB4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0cHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48dGl0bGUvPjxkZXNjLz48ZGVmcy8+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0ibWl1IiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSI+PGcgaWQ9IkFydGJvYXJkLTEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zMjYuMDAwMDAwLCAtNDA2LjAwMDAwMCkiPjxnIGlkPSJzbGljZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjE1LjAwMDAwMCwgMTE5LjAwMDAwMCkiLz48cGF0aCBkPSJNMzM0LjA1MjkwMyw0MTAuODI1Nzc3IEwzMzEuNTE0NzE5LDQxMy4zNjM5NjEgTDMzMC4xMDA1MDUsNDExLjk0OTc0NyBMMzM1LjA1MDI1Myw0MDcgTDM0MCw0MTEuOTQ5NzQ3IEwzMzguNTg1Nzg2LDQxMy4zNjM5NjEgTDMzNi4wNTEzNCw0MTAuODI5NTE1IEwzMzYuMDUxMzQsNDIxLjk5OTUwMSBMMzM0LjA1MjkwMyw0MjEuOTk5NTAxIEwzMzQuMDUyOTAzLDQxMC44MjU3NzcgWiBNMzI3LDQzMCBMMzQzLDQzMCBMMzQzLDQxNCBMMzQwLDQxNCBMMzQwLDQxNiBMMzQxLDQxNiBMMzQxLDQyOCBMMzI5LDQyOCBMMzI5LDQxNiBMMzMwLDQxNiBMMzMwLDQxNCBMMzI3LDQxNCBMMzI3LDQzMCBaIiBmaWxsPSIjMDAwMDAwIiBpZD0iY29tbW9uLXNoYXJlLWFjdGlvbi1nbHlwaCIvPjwvZz48L2c+PC9zdmc+" style="margin-right: -6px; vertical-align: -4px;"> then <b>'+ Add to Home Screen'</b></p><a class="modal-close" href="#" title="Close">CLOSE</a>
+      <h1>Just tap tap all the dishes you enjoy!</h1>
+      <div>
+        <p><b>1st</b> tap adds it <b style="background-color: #fff2ac; padding: 2px 4px;">to your wishlist</b></p>
+        <p><b>2nd</b> tap when you've <b style="background-color: #C0FF97; padding: 2px 4px;">tried the dish</b></p>
+        <p><b>3rd</b> tap if you <b style="background-color: #FFC8C8; padding: 2px 4px; text-decoration: line-through;">did not like</b> it(!)</p>
+        <p><b>4th</b> tap will reset <b style="background-color: #fff; border: 1px dotted #eee; padding: 2px 4px;">the dish</b></p>
+        <p>Tap the coloured blocks at the top to filter your choices.</p>
+        <p>We made this as a fun project to help you keep track of your adventure through Kungfu Kitchen's extensive menu! The data stays 100% on your phone, we don't see/use/share/sell anything.</p>
+        <p>**If you want to start again, tap 'Reset' button at the bottom of the page.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+  // get the app items
+  var theMenu = document.getElementById('theMenu'),
+    form = document.querySelector('form'),
+    input = form.querySelector('input'),
+    cache = {};
+
+  function howmany(){
+  var all = document.getElementsByTagName("li").length;
+  document.getElementById("eaten").innerHTML = eaten;
+  var wish = document.getElementsByClassName("wish").length;
+  document.getElementById("wish").innerHTML = "YOUR WISHLIST: " + wish;
+  var eaten = document.getElementsByClassName("eaten").length;
+  var nope = document.getElementsByClassName("no").length;
+  var ok = eaten+nope;
+  document.getElementById("eaten").innerHTML = "YOU LIKED: " + ok;
+  var togo = all-ok-12;
+  document.getElementById("all").innerHTML = "VIEW ALL " + togo;
+  }
+
+  // on submit
+  form.addEventListener('submit', function(ev){
+    "use strict";
+    ev.preventDefault();
+
+    // add item to the list
+    var value = input.value;
+    if (!cache[value] && !(value == "")) {
+        // cache the users input
+        cache[value] = true;
+        theMenu.innerHTML += '<li class="n">' + value + '<\/li>';
+        //store using localstorage
+        localStorage.kungfuMenu = theMenu.innerHTML;
+        howmany();
+    }
+  });
+
+  theMenu.addEventListener('click', function(ev){
+    "use strict";
+    var t = ev.target;
+
+    if (t.classList.contains('n')) {
+        t.classList.remove('n');
+        t.classList.add('wish');
+    } else if (t.classList.contains('wish')) {
+        t.classList.remove('wish');
+        t.classList.add('eaten');
+    } else if (t.classList.contains('eaten')) {
+        t.classList.remove('eaten');
+        t.classList.add('no');
+    } else if (t.classList.contains('no')) {
+        t.classList.remove('no');
+        t.classList.add('n');
+    }
+    localStorage.kungfuMenu = theMenu.innerHTML;
+    howmany();
+  });
+
+  //load local storage on first load
+  if (localStorage.kungfuMenu !== undefined) {
+    theMenu.innerHTML = localStorage.kungfuMenu;
+    howmany();
+  }
+
+  function tog(divClass)
+  {
+    var els = document.getElementsByClassName(divClass);
+    for(var i = 0; i < els.length; i++)
+    {
+        els[i].style.display = els[i].style.display == "none" ? "block" : "none";
+    }
+  }
+
+  function viewall()
+  {
+  var x = document.getElementById("theMenu");
+  var y = x.getElementsByTagName("li");
+  var i;
+  for (i = 0; i < y.length; i++) {
+  y[i].style.display = "block";
+  location.href = "#filters";
+  } };
+
+  function wishonly() {
+  var wish = document.getElementsByClassName("wish").length;
+  if (wish !==0) {
+  tog('n'); tog('eaten'); tog('no');
+  location.href = "#filters";
+  } else {
+  alert("Your Wish List is empty.\n\nTap on the dishes you want to try!");
+  }
+  };
+
+  function eatonly() {
+  var eaten = document.getElementsByClassName("eaten").length;
+  if (eaten !==0) {
+  tog('n'); tog('wish'); tog('no');
+  location.href = "#filters";
+  } else {
+  alert("You haven't tagged any dishes.\n\nTap on the dishes you've tried!");
+  }
+  };
+
+  function removeLocationHash() {
+    var noHashURL = window.location.href.replace(/#.*$/, '');
+    window.history.replaceState('', document.title, noHashURL)
+  }
+  window.addEventListener("popstate", function(event) {
+    removeLocationHash();
+  });
+  window.addEventListener("hashchange", function(event) {
+    event.preventDefault();
+    removeLocationHash();
+  });
+  window.addEventListener("load", function() {
+    removeLocationHash();
+  });
+
+  function resetMenu(){
+    var result = confirm("Are You Sure You Want to Reset Your Menu?\n\n*WARNING: THERE IS NO UNDO!*");
+    if(result){
+        localStorage.clear();
+  //      localStorage.removeItem("kungfuMenu");
+        window.scrollTo(0, 0);
+        location.reload();
+      } else { window.scrollTo(0, 0); }};
+
+  var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+  if(localStorage.getItem("ios")==null && iOS==true && window.navigator.standalone == false) {
+       alert("Add this App to your Home Screen!\nTap Share ⇪ > Add to Home Screen");
+       localStorage.setItem("ios","done");
+  }
+  </script>
+</body>
+</html>

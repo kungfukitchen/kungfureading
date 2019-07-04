@@ -1,0 +1,25 @@
+CACHE MANIFEST
+# 2019-07-04 #1
+
+# Explicitly cached entries
+index.html
+
+# offline.html will be displayed if the user is offline
+FALLBACK:
+index.html
+
+# All other resources (e.g. sites) require the user to be online. 
+NETWORK:
+
+
+# Additional resources to cache
+CACHE:
+index.html
+apple-touch-startup-image.png
+apple-touch-icon.png
+iphone5_splash.png
+iphone6_splash.png
+iphoneplus_splash.png
+iphonex_splash.png
+iphonexr_splash.png
+iphonexsmax_splash.png
