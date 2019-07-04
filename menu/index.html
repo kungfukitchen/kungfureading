@@ -495,7 +495,7 @@
       <p>What did you eat? Tap & keep track! <a href="#help" style="font-weight: bold; margin-left: 5px;">HELP? 帮?</a></p>
     </header>
     <div class="filters" id="filtered">
-      <span id="wish" onclick="viewall(); wishonly(); return false;" title="Click to see the dishes you want to try!">YOUR WISHLIST: 0</span> <span id="eaten" onclick="viewall(); eatonly(); return false;" title="Click to see the dishes you have tried!">YOU LIKED: 0</span> <span id="all" onclick="viewall(); return false;" title="Click to view the full menu.">VIEW ALL 150</span>
+      <span id="wish" onclick="viewall(); wishonly(); return false;" title="Click to see the dishes you want to try...">YOUR WISHLIST: 0</span> <span id="eaten" onclick="viewall(); eatonly(); return false;" title="Click to see the dishes you have tried...">YOU LIKED: 0</span> <span id="all" onclick="viewall(); return false;" title="Click to view the full menu...">VIEW ALL 150</span>
     </div>
     <ul id="theMenu">
       <li class="h2">
@@ -799,7 +799,7 @@
   var i;
   for (i = 0; i < y.length; i++) {
   y[i].style.display = "block";
-  location.href = "#filters";
+  location.href = "#filtered";
   } };
 
   function wishonly() {
