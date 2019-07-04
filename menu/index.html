@@ -494,7 +494,7 @@
       <h1><span>Personal Menu Tracker</span></h1>
       <p>What did you eat? Tap & keep track! <a href="#help" style="font-weight: bold; margin-left: 5px;">HELP? 帮?</a></p>
     </header>
-    <div class="filters" id="filters">
+    <div class="filters" id="filtered">
       <span id="wish" onclick="viewall(); wishonly(); return false;" title="Click to see the dishes you want to try!">YOUR WISHLIST: 0</span> <span id="eaten" onclick="viewall(); eatonly(); return false;" title="Click to see the dishes you have tried!">YOU LIKED: 0</span> <span id="all" onclick="viewall(); return false;" title="Click to view the full menu.">VIEW ALL 150</span>
     </div>
     <ul id="theMenu">
@@ -806,7 +806,7 @@
   var wish = document.getElementsByClassName("wish").length;
   if (wish !==0) {
   tog('n'); tog('eaten'); tog('no');
-  location.href = "#filters";
+  location.href = "#filtered";
   } else {
   alert("Your Wish List is empty.\n\nTap on the dishes you want to try!");
   }
@@ -816,7 +816,7 @@
   var eaten = document.getElementsByClassName("eaten").length;
   if (eaten !==0) {
   tog('n'); tog('wish'); tog('no');
-  location.href = "#filters";
+  location.href = "#filtered";
   } else {
   alert("You haven't tagged any dishes.\n\nTap on the dishes you've tried!");
   }
