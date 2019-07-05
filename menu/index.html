@@ -1,4 +1,4 @@
-li#var<!DOCTYPE html>
+<!DOCTYPE html>
 <html manifest="kungfumenu.manifest">
 <head>
   <meta charset="utf-8">
@@ -161,7 +161,7 @@ li#var<!DOCTYPE html>
     background-color: rgba(0, 0, 0, 0.02);
   }
 
-  li.h2 {
+  li.dishes {
     padding: 20px 15px 15px;
     background-color: rgba(0, 0, 0, 0.01);
     margin: 0;
@@ -209,13 +209,13 @@ li#var<!DOCTYPE html>
     color: #fff;
   }
 
-  li.eaten{
+  li.liked{
     background: #C0FF97;
     transition: 0.2s ease-in-out;
     border-color: #fff;
   }
 
-  li.eaten:before{
+  li.liked:before{
     content: "\2713";
     float:left;
     margin-left: -60px;
@@ -315,7 +315,7 @@ li#var<!DOCTYPE html>
     background-color: #fff2ac;
     }
 
-  .filters span#eaten {
+  .filters span#liked {
     background-color: #C0FF97;
     }
 
@@ -462,7 +462,7 @@ li#var<!DOCTYPE html>
   margin: 0 0 15px;
   }
 
-  li.h2 {
+  li.dishes {
   //text-align:center;
   }
 
@@ -547,18 +547,18 @@ li#var<!DOCTYPE html>
     </header>
     <div class="filters" id="filtered">
       <span id="wish" onclick="wishonly();" title="Click to see the dishes you want to try...">WISHLIST: 0</span>
-      <span id="eaten" onclick="eatonly();" title="Click to see the dishes you have tried...">YOU LIKED: 0</span>
+      <span id="liked" onclick="eatonly();" title="Click to see the dishes you have tried...">YOU LIKED: 0</span>
       <span id="v" onclick="vegonly();" title="Click to see our veg/an options...">VEG/AN</span>
-      <span id="all" onclick="viewall();" title="Click to view the full menu...">VIEW ALL 150</span>
+      <span id="all" onclick="viewall();" title="Click to view the full menu...">VIEW ALL 149</span>
     </div>
     <ul id="theMenu">
-      <li class="h2">
+      <li class="dishes">
         <h2>STARTERS &#x1F95F;</h2>
       </li>
       <li class="n"><span>A.</span>Colourful Prawn Crackers</li>
       <li class="n v"><span>B.</span>Vegetable Spring Rolls</li>
       <li class="n"><span>C.</span>Chicken Wings</li>
-      <li class="h2">
+      <li class="dishes">
         <h2>COLD DISHES &#x1F976;</h2>
       </li>
       <li class="n"><span>1.</span>Beef and Beef Tripe in Chilli Oil / 夫妻肺片</li>
@@ -575,7 +575,7 @@ li#var<!DOCTYPE html>
       <li class="n v"><span>12.</span>Shredded Potato Salad / 凉拌土豆丝</li>
       <li class="n"><span>13.</span>Chicken with Ginger & Soy Sauce Topping / 姜葱霸王鸡</li>
       <li class="n v"><span>14.</span>Seaweed Salad / 凉拌海带丝</li>
-      <li class="h2">
+      <li class="dishes">
         <h2>SALT & PEPPER DISHES &#x1F336;</h2>
       </li>
       <li class="n"><span>15.</span>Salt and Pepper King Prawns / 椒盐大虾</li>
@@ -584,7 +584,7 @@ li#var<!DOCTYPE html>
       <li class="n v"><span>18.</span>Salt and Pepper Fried Tofu / 椒盐豆腐</li>
       <li class="n"><span>19.</span>Salt and Pepper Pork Ribs / 椒盐排骨</li>
       <li class="n"><span>20.</span>Salt and Pepper Pork Fillet / 椒盐里脊</li>
-      <li class="h2">
+      <li class="dishes">
         <h2>SOUP DISHES &#x1F372;</h2>
       </li>
       <li class="n"><span>21.</span>Hot & Sour Soup / 酸辣汤</li>
@@ -596,7 +596,7 @@ li#var<!DOCTYPE html>
       <li class="n"><span>27.</span>Fish Fillet with Tofu Soup / 鱼片豆腐汤</li>
       <li class="n"><span>28.</span>Spare Ribs with Winter Melon Soup / 冬瓜排骨汤</li>
       <li class="n"><span>29.</span>Shandong Style Lamb Soup / 山东炖全羊汤</li>
-      <li class="h2">
+      <li class="dishes">
         <h2>FISH & SEAFOOD &#x1F41F;</h2>
       </li>
       <li class="n"><span>30.</span>Braised Butterfish / 红烧鲳鱼</li>
@@ -611,7 +611,7 @@ li#var<!DOCTYPE html>
       <li class="n"><span>39.</span>Sichuan Style Grilled Fish with Vegetables and Tofu / 巴蜀烤鱼</li>
       <li class="n"><span>40.</span>Deep Fried Fish Fillet in Hot Spicy Pot / 麻辣香锅片片鱼</li>
       <li class="n"><span>41.</span>Sweet Sour Fish Fillet Slices / 咕唠鱼片</li>
-      <li class="h2">
+      <li class="dishes">
         <h2>SPECIAL POTS &#x1F372;</h2>
       </li>
       <li class="n"><span>42.</span>Griddle Cooked Spare Ribs</li>
@@ -623,7 +623,7 @@ li#var<!DOCTYPE html>
       <li class="n v"><span>48.</span>Griddle Cauliflower</li>
       <li class="n"><span>49.</span>Hot & Spicy Pot with your own choice</li>
       <li class="n"><span>50.</span>Beef Tripe, Tofu and LunchMeat in Spicy Sauce</li>
-      <li class="h2">
+      <li class="dishes">
         <h2 class="h">BEEF &#x1F42E;</h2>
       </li>
       <li class="n"><span>51.</span>Stir Fry Beef with Fresh Chilli</li>
@@ -635,7 +635,7 @@ li#var<!DOCTYPE html>
       <li class="n"><span>57.</span>Water Boiled Pork Slices in Hot & Spicy Sauce</li>
       <li class="n"><span>58.</span>Beef with Pickled Cabbage, Needle Mushroom</li>
       <li class="n"><span>59.</span>Stir Fry Beef Tripes with Fresh Chilli</li>
-      <li class="h2">
+      <li class="dishes">
         <h2 class="h">LAMB &#x1F411;</h2>
       </li>
       <li class="n"><span>60.</span>Lamb cooked with Pickled Cabbage, Needle Mushroom</li>
@@ -644,7 +644,7 @@ li#var<!DOCTYPE html>
       <li class="n"><span>63.</span>Stir Fried Mixed Lamb, Tripes, Heart, Liver and Lungs with Fresh Chilli and Coriander</li>
       <li class="n"><span>64.</span>Stir Fried Lamb with Leeks and Coriander</li>
       <li class="n"><span>65.</span>Stir Fried Lamb Tripes with Coriander</li>
-      <li class="h2">
+      <li class="dishes">
         <h2 class="h">CHICKEN &#x1F414;</h2>
       </li>
       <li class="n"><span>66.</span>Sichuan Style Fried Spicy Chicken</li>
@@ -656,7 +656,7 @@ li#var<!DOCTYPE html>
       <li class="n"><span>72.</span>Shandong Style Stir Fried Chicken</li>
       <li class="n"><span>73.</span>Sweet and Sour Chicken with Pineapple</li>
       <li class="n"><span>148.</span>Chicken in Oyster Sauce</li>
-      <li class="h2">
+      <li class="dishes">
         <h2>PORK &#x1F43D;</h2>
       </li>
       <li class="n"><span>74.</span>Stir Fried Pork with Fresh Chilli</li>
@@ -677,7 +677,7 @@ li#var<!DOCTYPE html>
       <li class="n"><span>90.</span>Stir Fried Pig’s Intestines & black fungus</li>
       <li class="n"><span>91.</span>Braised Cabbage, Tofu, Vermicelli with Plain Boiled Pork (Soup Style)</li>
       <li class="n"><span>92.</span>Pork with Chinese Leafs and Sweet Potato Noodles (Soup)</li>
-      <li class="h2">
+      <li class="dishes">
         <h2>VEG & TOFU &#x1F346;</h2>
       </li>
       <li class="n"><span>93.</span>Mapo Tofu</li>
@@ -706,7 +706,7 @@ li#var<!DOCTYPE html>
       <li class="n v"><span>117.</span>Five Spices Edamame Beans</li>
       <li class="n v"><span>118.</span>Stir Fry Seasonal Vegetables</li>
       <li class="n v"><span>119.</span>Deep Fried Sweet Potato Strips coated with Sugar</li>
-      <li class="h2">
+      <li class="dishes">
         <h2>RICE & CHIPS &#x1F35A;</h2>
       </li>
       <li class="n v"><span>120.</span>Boiled Rice</li>
@@ -719,7 +719,7 @@ li#var<!DOCTYPE html>
       <li class="n"><span>129.</span>Braised Chicken Leg Rice</li>
       <li class="n v"><span>149.</span>Chips</li>
       <li class="n v"><span>150.</span>Chips with Cheese</li>
-      <li class="h2">
+      <li class="dishes">
         <h2>NOODLES &#x1F35C;</h2>
       </li>
       <li class="n"><span>128.</span>Dumplings in Sour and Spicy Soup</li>
@@ -775,42 +775,43 @@ li#var<!DOCTYPE html>
       </div>
     </div>
   </div>
+
   <script>
   // get the app items
-  var theMenu = document.getElementById('theMenu'),
-    form = document.querySelector('form'),
-    input = form.querySelector('input'),
+  var theMenu = document.getElementById("theMenu"),
+    form = document.querySelector("form"),
+    input = form.querySelector("input"),
     cache = {};
 
   function howmany(){
-  var all = $('li').length - $('li.h2').length;
-  var wish = $('.wish').length;
-  var eaten = $('.eaten').length;
-  var nope = $('.no').length;
-  var ok = eaten+nope;
+  var all = $("li").length - $("li.dishes").length;
+  var wish = $(".wish").length;
+  var liked = $(".liked").length;
+  var nope = $(".no").length;
+  var ok = liked+nope;
   var togo = all-ok;
-  $("#eaten").html(eaten);
+  $("#liked").html(liked);
   $("#wish").html("WISH LIST: " + wish);
-  $("#eaten").html("YOU LIKED: " + ok);
+  $("#liked").html("YOU LIKED: " + ok);
   $("#all").html("VIEW ALL: " + togo);
   }
 
-  theMenu.addEventListener('click', function(ev){
+  theMenu.addEventListener("click", function(ev){
     "use strict";
     var t = ev.target;
 
-    if (t.classList.contains('n')) {
-        t.classList.remove('n');
-        t.classList.add('wish');
-    } else if (t.classList.contains('wish')) {
-        t.classList.remove('wish');
-        t.classList.add('eaten');
-    } else if (t.classList.contains('eaten')) {
-        t.classList.remove('eaten');
-        t.classList.add('no');
-    } else if (t.classList.contains('no')) {
-        t.classList.remove('no');
-        t.classList.add('n');
+    if (t.classList.contains("n")) {
+        t.classList.remove("n");
+        t.classList.add("wish");
+    } else if (t.classList.contains("wish")) {
+        t.classList.remove("wish");
+        t.classList.add("liked");
+    } else if (t.classList.contains("liked")) {
+        t.classList.remove("liked");
+        t.classList.add("no");
+    } else if (t.classList.contains("no")) {
+        t.classList.remove("no");
+        t.classList.add("n");
     }
     localStorage.kungfuMenu = theMenu.innerHTML;
     howmany();
@@ -824,15 +825,15 @@ li#var<!DOCTYPE html>
 
   function viewall()
   {
-  $( "li.n, li.wish, li.eaten, li.no" ).show();
+  $( "li.n, li.wish, li.liked, li.no" ).show();
   window.scrollTo(0, 0);
   location.href = "#filtered";
   };
 
   function wishonly() {
-  var wish = $('.wish').length;
+  var wish = $(".wish").length;
   if (wish !==0) {
-  $("li.n, li.eaten, li.no" ).hide();
+  $("li.n, li.liked, li.no" ).hide();
   $("li.wish" ).show();
   window.scrollTo(0, 0);
   location.href = "#filtered";
@@ -842,10 +843,10 @@ li#var<!DOCTYPE html>
   };
 
   function eatonly() {
-  var eaten = $('.eaten').length;
-  if (eaten !==0) {
+  var liked = $(".liked").length;
+  if (liked !==0) {
     $("li.n, li.wish, li.no" ).hide();
-    $("li.eaten" ).show();
+    $("li.liked" ).show();
     window.scrollTo(0, 0);
     location.href = "#filtered";
   } else {
@@ -854,7 +855,7 @@ li#var<!DOCTYPE html>
   };
 
   function vegonly() {
-    $("li.n, li.wish, li.no, li.eaten" ).hide();
+    $("li.n, li.wish, li.no, li.liked" ).hide();
     $("li.v").show();
     window.scrollTo(0, 0);
     location.href = "#filtered";
@@ -877,9 +878,8 @@ li#var<!DOCTYPE html>
   }
 
   window.onhashchange = function () {
-    history.pushState(null, null, window.location.href.split('#')[0]);
+    history.pushState(null, null, window.location.href.split("#")[0]);
   };
-
   </script>
 </body>
 </html>
