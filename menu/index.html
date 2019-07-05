@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+li#var<!DOCTYPE html>
 <html manifest="kungfumenu.manifest">
 <head>
   <meta charset="utf-8">
@@ -177,6 +177,14 @@
 //  padding-left: 10px;
   }
 
+  li h2.h:after {
+    content: "حلال";
+    margin: 0;
+    font-size: 0.6em;
+    float: right;
+    color: #ccc;
+  }
+
   li span {
     position: absolute;
     left: 30px;
@@ -228,6 +236,20 @@
     float:left;
     margin-left: -60px;
     color: #FFC8C8;
+  }
+
+  li.v:after{
+    content: "V";
+    color: #fff;
+    background-color: #0c0;
+    padding: 2px 4px;
+    border-radius: 25%;
+    font-weight: bold;
+    font-size: 0.6em;
+    opacity: 0.5;
+    vertical-align: middle;
+    margin-left: 4px;
+    white-space: nowrap;
   }
 
   h2 ~ li {
@@ -286,7 +308,7 @@
     border-color: rgba(175, 47, 47, 0.1);
     cursor: pointer;
   //    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-    width: 33.33%;
+    width: 25%;
     }
 
   .filters span#wish {
@@ -297,11 +319,20 @@
     background-color: #C0FF97;
     }
 
+
+    .filters span#v {
+      background-color: #fff;
+      white-space: nowrap;
+      color: #0c0;
+    //    margin-right: 10%;
+      }
+
   .filters span#all {
     background-color: #FFC8C8;
     white-space: nowrap;
   //    margin-right: 10%;
     }
+
 
   .filters span:hover {
     border-color: rgba(175, 47, 47, 1);
@@ -516,7 +547,8 @@
     </header>
     <div class="filters" id="filtered">
       <span id="wish" onclick="wishonly();" title="Click to see the dishes you want to try...">WISHLIST: 0</span>
-      <span id="eaten" onclick="eatonly();" title="Click to see the dishes you have tried...">LIKED: 0</span>
+      <span id="eaten" onclick="eatonly();" title="Click to see the dishes you have tried...">YOU LIKED: 0</span>
+      <span id="v" onclick="vegonly();" title="Click to see our veg/an options...">VEG/AN</span>
       <span id="all" onclick="viewall();" title="Click to view the full menu...">VIEW ALL 150</span>
     </div>
     <ul id="theMenu">
@@ -524,7 +556,7 @@
         <h2>STARTERS &#x1F95F;</h2>
       </li>
       <li class="n"><span>A.</span>Colourful Prawn Crackers</li>
-      <li class="n"><span>B.</span>Vegetable Spring Rolls</li>
+      <li class="n v"><span>B.</span>Vegetable Spring Rolls</li>
       <li class="n"><span>C.</span>Chicken Wings</li>
       <li class="h2">
         <h2>COLD DISHES &#x1F976;</h2>
@@ -537,28 +569,28 @@
       <li class="n"><span>6.</span>Pig Ears with Chef Special Chilli sauce / 凉拌猪耳朵</li>
       <li class="n"><span>7.</span>Sliced Pork with Garlic and Chilli Sauce / 蒜泥白肉</li>
       <li class="n"><span>8.</span>Shredded Tripe with Chilli Sauce / 红油肚丝</li>
-      <li class="n"><span>9.</span>Spinach and Peanut Salad with Vinegar Sauce / 老醋菠菜花生</li>
+      <li class="n v"><span>9.</span>Spinach and Peanut Salad with Vinegar Sauce / 老醋菠菜花生</li>
       <li class="n"><span>10.</span>Shredded Cooked Pork with Jelly Sheet / 肉丝拉皮</li>
-      <li class="n"><span>11.</span>Cucumber in Garlic Sauce / 蒜泥黄瓜</li>
-      <li class="n"><span>12.</span>Shredded Potato Salad / 凉拌土豆丝</li>
+      <li class="n v"><span>11.</span>Cucumber in Garlic Sauce / 蒜泥黄瓜</li>
+      <li class="n v"><span>12.</span>Shredded Potato Salad / 凉拌土豆丝</li>
       <li class="n"><span>13.</span>Chicken with Ginger & Soy Sauce Topping / 姜葱霸王鸡</li>
-      <li class="n"><span>14.</span>Seaweed Salad / 凉拌海带丝</li>
+      <li class="n v"><span>14.</span>Seaweed Salad / 凉拌海带丝</li>
       <li class="h2">
         <h2>SALT & PEPPER DISHES &#x1F336;</h2>
       </li>
       <li class="n"><span>15.</span>Salt and Pepper King Prawns / 椒盐大虾</li>
       <li class="n"><span>16.</span>Salt and Pepper Squid / 椒盐鱿鱼</li>
       <li class="n"><span>17.</span>Salt and Pepper Chicken Wings / 椒盐鸡翅</li>
-      <li class="n"><span>18.</span>Salt and Pepper Fried Tofu / 椒盐豆腐</li>
+      <li class="n v"><span>18.</span>Salt and Pepper Fried Tofu / 椒盐豆腐</li>
       <li class="n"><span>19.</span>Salt and Pepper Pork Ribs / 椒盐排骨</li>
       <li class="n"><span>20.</span>Salt and Pepper Pork Fillet / 椒盐里脊</li>
       <li class="h2">
         <h2>SOUP DISHES &#x1F372;</h2>
       </li>
       <li class="n"><span>21.</span>Hot & Sour Soup / 酸辣汤</li>
-      <li class="n"><span>22.</span>Seaweeds & Egg Soup / 紫菜蛋花汤</li>
-      <li class="n"><span>23.</span>Creamy Sweet Corn Soup / 玉米羹</li>
-      <li class="n"><span>24.</span>Tomato Egg Soup / 西红柿蛋花汤</li>
+      <li class="n v"><span>22.</span>Seaweeds & Egg Soup / 紫菜蛋花汤</li>
+      <li class="n v"><span>23.</span>Creamy Sweet Corn Soup / 玉米羹</li>
+      <li class="n v"><span>24.</span>Tomato Egg Soup / 西红柿蛋花汤</li>
       <li class="n"><span>25.</span>Pork Ribs Seaweed Soup / 排骨海带汤</li>
       <li class="n"><span>26.</span>West Lake Style Beef Soup / 西湖牛肉羹</li>
       <li class="n"><span>27.</span>Fish Fillet with Tofu Soup / 鱼片豆腐汤</li>
@@ -588,11 +620,11 @@
       <li class="n"><span>45.</span>Griddle Cooked/Stir Fry Pork Intestines</li>
       <li class="n"><span>46.</span>Griddle Cooked King Prawn</li>
       <li class="n"><span>47.</span>Griddle Cooked Squid Tentacles</li>
-      <li class="n"><span>48.</span>Griddle Cauliflower</li>
+      <li class="n v"><span>48.</span>Griddle Cauliflower</li>
       <li class="n"><span>49.</span>Hot & Spicy Pot with your own choice</li>
       <li class="n"><span>50.</span>Beef Tripe, Tofu and LunchMeat in Spicy Sauce</li>
       <li class="h2">
-        <h2>BEEF &#x1F42E;</h2>
+        <h2 class="h">BEEF &#x1F42E;</h2>
       </li>
       <li class="n"><span>51.</span>Stir Fry Beef with Fresh Chilli</li>
       <li class="n"><span>52.</span>Chef Special Beef</li>
@@ -604,7 +636,7 @@
       <li class="n"><span>58.</span>Beef with Pickled Cabbage, Needle Mushroom</li>
       <li class="n"><span>59.</span>Stir Fry Beef Tripes with Fresh Chilli</li>
       <li class="h2">
-        <h2>LAMB &#x1F411;</h2>
+        <h2 class="h">LAMB &#x1F411;</h2>
       </li>
       <li class="n"><span>60.</span>Lamb cooked with Pickled Cabbage, Needle Mushroom</li>
       <li class="n"><span>61.</span>Fried Lamb Chops with Laoganma Chilli Sauce and Cumin</li>
@@ -613,7 +645,7 @@
       <li class="n"><span>64.</span>Stir Fried Lamb with Leeks and Coriander</li>
       <li class="n"><span>65.</span>Stir Fried Lamb Tripes with Coriander</li>
       <li class="h2">
-        <h2>CHICKEN &#x1F414;</h2>
+        <h2 class="h">CHICKEN &#x1F414;</h2>
       </li>
       <li class="n"><span>66.</span>Sichuan Style Fried Spicy Chicken</li>
       <li class="n"><span>67.</span>Kung Pao Chicken</li>
@@ -649,49 +681,49 @@
         <h2>VEG & TOFU &#x1F346;</h2>
       </li>
       <li class="n"><span>93.</span>Mapo Tofu</li>
-      <li class="n"><span>94.</span>Delicious Fried Tofu</li>
-      <li class="n"><span>95.</span>Home Style Tofu</li>
+      <li class="n v"><span>94.</span>Delicious Fried Tofu</li>
+      <li class="n v"><span>95.</span>Home Style Tofu</li>
       <li class="n"><span>96.</span>Crab Roe Flavour Japanese Tofu</li>
       <li class="n"><span>97.</span>King Prawns cooked with Japanese Tofu</li>
-      <li class="n"><span>98.</span>Creamy Chinese Leaf Soup</li>
-      <li class="n"><span>99.</span>Creamy Spinach Soup</li>
-      <li class="n"><span>100.</span>Traditional Cooking Way of Chinese Leaf</li>
-      <li class="n"><span>101.</span>Sweet and Sour Deep Fried Aubergines</li>
-      <li class="n"><span>102.</span>Braised Aubergines</li>
+      <li class="n v"><span>98.</span>Creamy Chinese Leaf Soup</li>
+      <li class="n v"><span>99.</span>Creamy Spinach Soup</li>
+      <li class="n v"><span>100.</span>Traditional Cooking Way of Chinese Leaf</li>
+      <li class="n v"><span>101.</span>Sweet and Sour Deep Fried Aubergines</li>
+      <li class="n v"><span>102.</span>Braised Aubergines</li>
       <li class="n"><span>103.</span>Fish Fragrant Aubergines</li>
-      <li class="n"><span>104.</span>Stir Fried Potatoes, Peppers and Aubergines</li>
-      <li class="n"><span>105.</span>Stir Fried Fine Beans</li>
-      <li class="n"><span>106.</span>Deep Fried Long Green Pepper</li>
-      <li class="n"><span>107.</span>Stir Fried Tear Cabbages</li>
-      <li class="n"><span>108.</span>Stir Fried Shredded Potatoes</li>
-      <li class="n"><span>109.</span>Hot and Sour Shredded Potatoes</li>
-      <li class="n"><span>110.</span>Stir Fried Tofu Sheet</li>
-      <li class="n"><span>111.</span>Stir Fry Tomatoes with Eggs</li>
-      <li class="n"><span>112.</span>Stir Fry Broccoli with fresh Garlic</li>
-      <li class="n"><span>113.</span>Stir Fry Lettuce with Fresh Garlic</li>
+      <li class="n v"><span>104.</span>Stir Fried Potatoes, Peppers and Aubergines</li>
+      <li class="n v"><span>105.</span>Stir Fried Fine Beans</li>
+      <li class="n v"><span>106.</span>Deep Fried Long Green Pepper</li>
+      <li class="n v"><span>107.</span>Stir Fried Tear Cabbages</li>
+      <li class="n v"><span>108.</span>Stir Fried Shredded Potatoes</li>
+      <li class="n v"><span>109.</span>Hot and Sour Shredded Potatoes</li>
+      <li class="n v"><span>110.</span>Stir Fried Tofu Sheet</li>
+      <li class="n v"><span>111.</span>Stir Fry Tomatoes with Eggs</li>
+      <li class="n v"><span>112.</span>Stir Fry Broccoli with fresh Garlic</li>
+      <li class="n v"><span>113.</span>Stir Fry Lettuce with Fresh Garlic</li>
       <li class="n"><span>115.</span>Garlic Sprout with Eggs</li>
-      <li class="n"><span>116.</span>Stir Fry Pak Choi with Fresh Garlic</li>
-      <li class="n"><span>117.</span>Five Spices Edamame Beans</li>
-      <li class="n"><span>118.</span>Stir Fry Seasonal Vegetables</li>
-      <li class="n"><span>119.</span>Deep Fried Sweet Potato Strips coated with Sugar</li>
+      <li class="n v"><span>116.</span>Stir Fry Pak Choi with Fresh Garlic</li>
+      <li class="n v"><span>117.</span>Five Spices Edamame Beans</li>
+      <li class="n v"><span>118.</span>Stir Fry Seasonal Vegetables</li>
+      <li class="n v"><span>119.</span>Deep Fried Sweet Potato Strips coated with Sugar</li>
       <li class="h2">
         <h2>RICE & CHIPS &#x1F35A;</h2>
       </li>
-      <li class="n"><span>120.</span>Boiled Rice</li>
-      <li class="n"><span>121.</span>Egg Fried Rice</li>
+      <li class="n v"><span>120.</span>Boiled Rice</li>
+      <li class="n v"><span>121.</span>Egg Fried Rice</li>
       <li class="n"><span>123.</span>Yang Chow Egg Fried Rice</li>
       <li class="n"><span>124.</span>Seafood Egg Fried Rice</li>
       <li class="n"><span>125.</span>Fried Beef Rice</li>
       <li class="n"><span>126.</span>Chicken Leg Meat Rice</li>
       <li class="n"><span>128.</span>Singapore Egg Fried Rice</li>
       <li class="n"><span>129.</span>Braised Chicken Leg Rice</li>
-      <li class="n"><span>149.</span>Chips</li>
-      <li class="n"><span>150.</span>Chips with Cheese</li>
+      <li class="n v"><span>149.</span>Chips</li>
+      <li class="n v"><span>150.</span>Chips with Cheese</li>
       <li class="h2">
         <h2>NOODLES &#x1F35C;</h2>
       </li>
       <li class="n"><span>128.</span>Dumplings in Sour and Spicy Soup</li>
-      <li class="n"><span>129.</span>Meat/Vegetable Dumplings</li>
+      <li class="n v"><span>129.</span>Meat/Vegetable Dumplings</li>
       <li class="n"><span>130.</span>Fried Dumplings</li>
       <li class="n"><span>131.</span>Beijing Fried Bean Paste Noodles</li>
       <li class="n"><span>132.</span>Special Ingredient Noodles</li>
@@ -702,9 +734,9 @@
       <li class="n"><span>137.</span>Braised Beef Flank Noodles</li>
       <li class="n"><span>138.</span>Braised Pork Ribs Noodles</li>
       <li class="n"><span>139.</span>Stir Fried Beef and Rice Noodles</li>
-      <li class="n"><span>140.</span>Chef Special Chinese Pancakes</li>
-      <li class="n"><span>142.</span>Soy Milk and 3 Chinese Donuts</li>
-      <li class="n"><span>144.</span>Stir Fry Udon with Vegetables</li>
+      <li class="n v"><span>140.</span>Chef Special Chinese Pancakes</li>
+      <li class="n v"><span>142.</span>Soy Milk and 3 Chinese Donuts</li>
+      <li class="n v"><span>144.</span>Stir Fry Udon with Vegetables</li>
       <li class="n"><span>145.</span>Stir Fry Udon with Chicken</li>
       <li class="n"><span>146.</span>Stir Fry Udon with Beef</li>
       <li class="n"><span>147.</span>Stir Fry Udon with Pork</li>
@@ -759,7 +791,7 @@
   var togo = all-ok;
   $("#eaten").html(eaten);
   $("#wish").html("WISH LIST: " + wish);
-  $("#eaten").html("LIKED: " + ok);
+  $("#eaten").html("YOU LIKED: " + ok);
   $("#all").html("VIEW ALL: " + togo);
   }
 
@@ -820,6 +852,14 @@
   alert("You haven't tagged any dishes.\n\nTap on the dishes you've tried!");
   }
   };
+
+  function vegonly() {
+    $("li.n, li.wish, li.no, li.eaten" ).hide();
+    $("li.v").show();
+    window.scrollTo(0, 0);
+    location.href = "#filtered";
+  };
+
 
   function resetMenu(){
     var result = confirm("Are You Sure You Want to Reset Your Menu?\n\n*WARNING: THERE IS NO UNDO!*");
