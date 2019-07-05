@@ -515,8 +515,8 @@
       <p>What did you eat? Tap & keep track! <a href="#help" style="font-weight: bold; margin-left: 5px;">HELP? 帮?</a></p>
     </header>
     <div class="filters" id="filtered">
-      <span id="wish" onclick="wishonly();" title="Click to see the dishes you want to try...">YOUR WISHLIST: 0</span>
-      <span id="eaten" onclick="eatonly();" title="Click to see the dishes you have tried...">YOU LIKED: 0</span>
+      <span id="wish" onclick="wishonly();" title="Click to see the dishes you want to try...">WISHLIST: 0</span>
+      <span id="eaten" onclick="eatonly();" title="Click to see the dishes you have tried...">LIKED: 0</span>
       <span id="all" onclick="viewall();" title="Click to view the full menu...">VIEW ALL 150</span>
     </div>
     <ul id="theMenu">
@@ -758,8 +758,8 @@
   var ok = eaten+nope;
   var togo = all-ok;
   $("#eaten").html(eaten);
-  $("#wish").html("YOUR WISHLIST: " + wish);
-  $("#eaten").html("YOU LIKED: " + ok);
+  $("#wish").html("WISH LIST: " + wish);
+  $("#eaten").html("LIKED: " + ok);
   $("#all").html("VIEW ALL: " + togo);
   }
 
