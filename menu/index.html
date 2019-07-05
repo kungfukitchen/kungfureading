@@ -537,7 +537,7 @@
     <div class="filters" id="filtered">
       <span id="wish" onclick="wishonly();" title="Click to see the dishes you want to try...">WISHLIST: 0</span>
       <span id="liked" onclick="eatonly();" title="Click to see the dishes you have tried...">YOU LIKED: 0</span>
-      <span id="v" onclick="vegonly();" title="Click to see our veg/an options...">VEG/AN</span>
+      <span id="v" onclick="vegonly();" title="Click to see our veg(an) options...">VEG(AN)</span>
       <span id="all" onclick="viewall();" title="Click to view the full menu...">VIEW ALL 149</span>
     </div>
     <ul id="theMenu">
@@ -712,7 +712,7 @@
         <h2>NOODLES &#x1F35C;</h2>
       </li>
       <li class="n"><span>128.</span>Dumplings in Sour and Spicy Soup</li>
-      <li class="n v"><span>129.</span>Meat/Vegetable Dumplings</li>
+      <li class="n v"><span>129.</span>Meat or Vegetable Dumplings</li>
       <li class="n"><span>130.</span>Fried Dumplings</li>
       <li class="n"><span>131.</span>Beijing Fried Bean Paste Noodles</li>
       <li class="n"><span>132.</span>Special Ingredient Noodles</li>
@@ -869,6 +869,14 @@
   window.onhashchange = function () {
     history.pushState(null, null, window.location.href.split("#")[0]);
   };
+
+  $(document).ready(function(){
+    $('li').each(function () {
+        $(this).html(
+            $(this).html().replace(' / ', '<br/>')
+        );
+    });
+  });
   </script>
   <!--
   Kungfu Kitchen Personal Menu Tracker Webapp sources:
