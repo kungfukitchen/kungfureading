@@ -96,7 +96,7 @@
     margin-top: -10px;
     display:block;
     text-transform: uppercase;
-    letter-spacing: .15em;
+    letter-spacing: .1em;
   //    padding-left: .5em;
   }
 
@@ -283,7 +283,7 @@
     z-index: 999;
     display: flex;
     flex-flow: row nowrap;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #fff;
   }
 
   .filters span {
@@ -291,15 +291,17 @@
     margin: 0 ;
     padding: 4px 10px;
     text-decoration: none;
-    border-bottom: 4px solid transparent;
+    border-bottom: 1px solid transparent;
     cursor: pointer;
 //    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-    width: 33%;
+    width: 31%;
+    opacity: .8;
     }
 
   .filters span.on {
     color: #000;
     border-bottom-color: #960000;
+    opacity: 1;
   }
 
 
@@ -314,11 +316,10 @@
     .filters span#all {
       background-color: #FFC8C8;
       white-space: nowrap;
-  //    margin-right: 10%;
       }
 
   .filters span#v {
-    width: 5%;
+    width: 7%;
     background-color: rgba(0, 204, 0, 1);
     font-weight: bold;
     color:#fff;
@@ -384,12 +385,12 @@
   .modal-window h1 {
   font-size: 150%;
   margin: 0 0 15px;
-  text-align: center;
+//  text-align: center;
   }
 
   .modal-window p {
   font-size: 1.2em;
-  text-align: center;
+//  text-align: center;
   }
   .modal-close {
   color: #aaa;
@@ -407,11 +408,13 @@
   }
 
   p.box {
-  background: #eee; padding: 4px 2px; border: 1px dotted #c00; font-size: 1.2em; text-align: center;
+  background: #eee; padding: 4px 2px; border: 1px dotted #c00; font-size: 1.2em;
+  text-align: center;
   }
 
   .modal-window div #tap p {
-  padding-left:20%; text-align: left;
+  // padding-left:20%;
+  text-align: left;
   }
 
   p.box span {
@@ -570,7 +573,7 @@ html {
   <section class="menuapp">
     <div class="logor"></div>
     <header class="header">
-      <h1><span>Kungfu Kitchen Menu</span></h1>
+      <h1><span>Personal Menu Tracker</span></h1>
       <p>What did you eat? Tap & keep track! <a href="#help" style="font-weight: bold; margin-left: 5px;">HELP? 帮?</a></p>
     </header>
     <div class="filters" id="filtered">
@@ -797,9 +800,9 @@ html {
         <p><b>4th</b> tap will reset <b style="background-color: #fff; border: 1px dotted #eee; padding: 2px 4px;">the dish</b></p>
       </div>
       <div>
-        <p>Tap the coloured blocks at the top to filter your choices, including <span style="color: #fff; background-color: #0c0; font-weight: bold; padding: 2px;">Vegetarian</span></p>
+        <p>Tap the coloured blocks at the top to filter your choices, including <span style="color: #fff; background-color: #0c0; font-weight: bold; padding: 0px;">Vegetarian</span> options.</p>
         <p>We made this as a fun project to help you keep track of your adventure through Kungfu Kitchen's extensive menu! The data stays 100% on your phone, we don't see/use/share/sell anything.</p>
-        <p>*To start again, tap the 'RESET' button at the bottom of the page.</p>
+        <p>**To start again, tap the 'RESET' button at the bottom of the page.</p>
       </div>
     </div>
   </div>
