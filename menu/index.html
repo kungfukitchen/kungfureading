@@ -823,7 +823,7 @@
   function viewall()
   {
   $( "li.n, li.wish, li.liked, li.no" ).show();
-  $("span#wish, span#liked").removeClass("on");
+  $("span#wish, span#liked, span#v").removeClass("on");
   $("span#all").addClass("on");
   window.scrollTo(0, 0);
   location.href = "#filtered";
@@ -834,12 +834,13 @@
   if (wish !==0) {
   $("li.n, li.liked, li.no" ).hide();
   $("li.wish" ).show();
-  $("span#liked, span#all").removeClass("on");
+  $("span#liked, span#all, span#v").removeClass("on");
   $("span#wish").addClass("on");
   window.scrollTo(0, 0);
   location.href = "#filtered";
   } else {
   alert("Your Wish List is empty.\n\nTap on the dishes you want to try!");
+  $("span#wish, span#liked, span#all").removeClass("on");
   }
   };
 
@@ -848,12 +849,13 @@
   if (liked !==0) {
     $("li.n, li.wish, li.no" ).hide();
     $("li.liked" ).show();
-    $("span#wish, span#all").removeClass("on");
+    $("span#wish, span#all, span#v").removeClass("on");
     $("span#liked").addClass("on");
     window.scrollTo(0, 0);
     location.href = "#filtered";
   } else {
   alert("You haven't tagged any dishes.\n\nTap on the dishes you've tried!");
+  $("span#wish, span#liked, span#all").removeClass("on");
   }
   };
 
@@ -868,7 +870,7 @@
 
 
   function resetMenu(){
-    var result = confirm("Are You Sure You Want to Reset Your Menu?\n\n*WARNING: THERE IS NO UNDO!*");
+    var result = confirm("Sure You Want to Reset Your Menu?\n\n*WARNING: THERE IS NO UNDO!*");
     if(result){
         localStorage.clear();
   //      localStorage.removeItem("kungfuMenu");

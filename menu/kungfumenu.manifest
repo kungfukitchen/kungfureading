@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2019-07-06 ###
+# 2019-07-06 ####
 
 # Explicitly cached entries
 index.html
@@ -10,7 +10,6 @@ index.html
 
 # All other resources (e.g. sites) require the user to be online.
 NETWORK:
-
 
 # Additional resources to cache
 CACHE:
