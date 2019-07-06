@@ -274,8 +274,7 @@
     list-style: none;
     -webkit-user-select: none;
     text-align: center;
-  //  background-color: rgba(255, 255, 255, .9);
-    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.65) 90%,rgba(255,255,255,0) 100%);
+    background-color: #fff;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -300,6 +299,13 @@
     width: 33%;
     }
 
+  .filters span.on {
+    font-weight: bold;
+    color: #fff;
+    border-bottom: 1px solid #000;
+  }
+
+
   .filters span#wish {
     background-color: #fff2ac;
     }
@@ -316,17 +322,17 @@
 
   .filters span#v {
     width: 5%;
-    background-color: rgba(0, 204, 0, 0.5);
+    background-color: rgba(0, 204, 0, 1);
     font-weight: bold;
     color:#fff;
   }
 
   .filters span:hover {
-    border-color: rgba(175, 47, 47, 1);
+    border-color: #000;
   }
 
   .filters span.selected {
-    border-color: rgba(175, 47, 47, 0.5);
+    border-color: #c00;
   }
 
   .filters span.focus {
@@ -817,6 +823,8 @@
   function viewall()
   {
   $( "li.n, li.wish, li.liked, li.no" ).show();
+  $("span#wish, span#liked").removeClass("on");
+  $("span#all").addClass("on");
   window.scrollTo(0, 0);
   location.href = "#filtered";
   };
@@ -826,6 +834,8 @@
   if (wish !==0) {
   $("li.n, li.liked, li.no" ).hide();
   $("li.wish" ).show();
+  $("span#liked, span#all").removeClass("on");
+  $("span#wish").addClass("on");
   window.scrollTo(0, 0);
   location.href = "#filtered";
   } else {
@@ -838,6 +848,8 @@
   if (liked !==0) {
     $("li.n, li.wish, li.no" ).hide();
     $("li.liked" ).show();
+    $("span#wish, span#all").removeClass("on");
+    $("span#liked").addClass("on");
     window.scrollTo(0, 0);
     location.href = "#filtered";
   } else {
@@ -848,6 +860,8 @@
   function vegonly() {
     $("li.n, li.wish, li.no, li.liked" ).hide();
     $("li.v").show();
+    $("span#wish, span#liked, span#all").removeClass("on");
+    $("span#v").addClass("on");
     window.scrollTo(0, 0);
     location.href = "#filtered";
   };
@@ -882,12 +896,11 @@
   </script>
   <!--
   Kungfu Kitchen Personal Menu Tracker Webapp sources:
-  HTML/CSS/JS from Tutorial: Javascript ToDo list web application
+  HTML/CSS/JS tutorial: Javascript ToDo list web application
   https://tonyedwardspz.co.uk/blog/tutorial-offline-todo-list-web-application-part-1/
   HTML/CSS/JS http://todomvc.com/examples/vanillajs/
-  https://github.com/tastejs/todomvc/tree/master/examples/vanillajs
-  Modal window CSS: https://codepen.io/timothylong/pen/HhAer
-  Orientation landscape warning CSS: https://css-tricks.com/snippets/css/orientation-lock
+  Modal CSS: https://codepen.io/timothylong/pen/HhAer
+  Landscape CSS: https://css-tricks.com/snippets/css/orientation-lock
   -->
 </body>
 </html>
