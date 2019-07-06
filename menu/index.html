@@ -13,7 +13,7 @@
   <link href="iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
   <link href="iphonexr_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
   <link href="iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-  <title>Kungfu Kitchen Personal Menu Tracker</title>
+  <title>Kungfu Kitchen Menu Tracker</title>
   <meta content="Kungfu Kitchen is Reading's most authentic Chinese restaurant. Serving traditional specialities from all regions of China." name="description">
   <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0" id="viewport" name="viewport">
   <script>
@@ -75,7 +75,8 @@
 
   .header {
   width: 90%;
-  text-align: center;
+  text-align: left;
+  padding-left: 2em;
   }
   .header h1 {
     font-family: Georgia, 'Times New Roman', serif;
@@ -533,6 +534,40 @@
     overflow: hidden;
     }
 }
+
+@media screen and (min-width: 360px) and (max-width: 360px) and (orientation: portrait) {
+html {
+  overflow-x: hidden;
+}
+  .header {
+    text-align: left;
+    padding-left: 1em;
+  }
+  .header h1 {
+    font-size: 4em;
+  }
+
+  .header h1 span {
+    font-size: .31em;
+    margin-top: 10px;
+    white-space: nowrap;
+  }
+  .header p {
+  font-size: .9em;
+  }
+
+  li { font-size: 1.2em;}
+
+.modal-window > div {
+  width:80%;
+}
+
+.modal-window div #tap p {
+  padding-left: 0;
+  text-align: center;
+}
+}
+
   </style>
 </head>
 <body ontouchstart="">
@@ -544,7 +579,7 @@
     </header>
     <div class="filters" id="filtered">
       <span id="wish" onclick="wishonly();" title="Click to see the dishes you want to try...">WISHLIST: 0</span>
-      <span id="liked" onclick="eatonly();" title="Click to see the dishes you have tried...">YOU LIKED: 0</span>
+      <span id="liked" onclick="eatonly();" title="Click to see the dishes you have tried...">LIKED: 0</span>
       <span id="all" onclick="viewall();" title="Click to view the full menu...">VIEW ALL 149</span>
       <span id="v" onclick="vegonly();" title="Click to see our veg(an) options...">Veg</span>
     </div>
@@ -788,8 +823,8 @@
   var ok = liked+nope;
   var togo = all-ok;
   $("#liked").html(liked);
-  $("#wish").html("WISH LIST: " + wish);
-  $("#liked").html("YOU LIKED: " + ok);
+  $("#wish").html("WISHLIST: " + wish);
+  $("#liked").html("LIKED: " + ok);
   $("#all").html("VIEW ALL: " + togo);
   }
 
