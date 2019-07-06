@@ -105,7 +105,6 @@
   font-size: 1.2em;
   }
 
-
   .main {
     border-top: 0 solid #e6e6e6;
   }
@@ -194,9 +193,9 @@
 
   li.wish:before{
 //    content: "\25CF";
-    float:left;
-    margin-left: -60px;
-    color: #fff;
+//    float:left;
+//    margin-left: -60px;
+//    color: #fff;
   }
 
   li.liked{
@@ -292,18 +291,15 @@
     margin: 0 ;
     padding: 4px 10px;
     text-decoration: none;
-    border: 1px solid transparent;
-    border-radius: 0;
-    border-color: rgba(175, 47, 47, 0.1);
+    border-bottom: 4px solid transparent;
     cursor: pointer;
 //    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     width: 33%;
     }
 
   .filters span.on {
-    font-weight: bold;
     color: #000;
-    border-bottom: 1px solid #000;
+    border-bottom-color: #960000;
   }
 
 
@@ -329,15 +325,15 @@
   }
 
   .filters span:hover {
-    border-color: #000;
+    border-bottom-color: #960000;
   }
 
   .filters span.selected {
-    border-color: #c00;
+    border-bottom-color: #000;
   }
 
   .filters span.focus {
-//    border-color: #000;
+//    border-bottom-color: #eee;
   }
 
   form { display:none; }
@@ -932,7 +928,7 @@ html {
   });
   </script>
   <!--
-  Kungfu Kitchen Personal Menu Tracker Webapp sources:
+  Kungfu Kitchen Personal Menu Tracker Webapp resources:
   HTML/CSS/JS tutorial: Javascript ToDo list web application
   https://tonyedwardspz.co.uk/blog/tutorial-offline-todo-list-web-application-part-1/
   HTML/CSS/JS http://todomvc.com/examples/vanillajs/
