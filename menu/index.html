@@ -142,7 +142,7 @@
     border-bottom: 1px solid #eee;
     line-height: 1.4em;
     padding: 15px 15px 15px 70px;
-    -webkit-user-select: none;
+    -webkit-user-select: auto;
   }
 
   li:hover {
@@ -280,6 +280,7 @@
     top: 0;
     max-width: 550px;
   //    width: 100%;
+    height: 30px;
     z-index: 999;
     display: flex;
     flex-flow: row nowrap;
@@ -464,9 +465,8 @@
   .filters {
     margin: 0;
     padding: 0;
-    -webkit-user-select: none;
     line-height: 1em;
-    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.65) 90%,rgba(255,255,255,0) 100%);
+//    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.65) 90%,rgba(255,255,255,0) 100%);
     position: sticky;
     top: 0;
     max-width: 550px;
@@ -569,21 +569,89 @@ html {
 }
 }
 
+.search {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30px;
+  z-index: 999;
+  flex-flow: row nowrap;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.search input {
+	position: relative;
+	margin: 0;
+	width: 100%;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	border: 0;
+  padding: 10px;
+//  border: 1px solid #eee;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  width: 90%;
+  font-weight: 300;
+  color: #aaa;
+}
+
+.search .x {
+	width: 10%;
+  color: #c00;
+  display: none;
+}
+
+.search .x:hover {
+  cursor: pointer;
+}
+
+.search .x:before {
+	content: '×';
+  color: #c00;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+input::-webkit-input-placeholder {
+	font-style: italic;
+	font-weight: 300;
+	color: #bbb;
+}
+
+input::-moz-placeholder {
+	font-style: italic;
+	font-weight: 300;
+	color: #bbb;
+}
+
+input::input-placeholder {
+	font-style: italic;
+	font-weight: 300;
+	color: #bbb;
+}
   </style>
 </head>
 <body ontouchstart="">
   <section class="menuapp">
     <div class="logor"></div>
     <header class="header">
-      <h1><span>Personal Menu Tracker</span></h1>
+      <h1><span>Kungfu Kitchen Menu</span></h1>
       <p>What did you eat? Tap & keep track! <a href="#help" style="font-weight: bold; margin-left: 5px;">HELP? 帮?</a></p>
     </header>
     <div class="filters" id="filtered">
-      <span id="wish" onclick="wishonly();" title="Click to see the dishes you want to try...">WISHLIST: 0</span>
+      <span id="all" onclick="viewall();" title="Click to view the full menu...">VIEW ALL</span>
       <span id="liked" onclick="eatonly();" title="Click to see the dishes you have tried...">LIKED: 0</span>
-      <span id="all" onclick="viewall();" title="Click to view the full menu...">VIEW ALL 149</span>
+      <span id="wish" onclick="wishonly();" title="Click to see the dishes you want to try...">WISHLIST: 0</span>
       <span id="v" onclick="vegonly();" title="Click to see our veg(an) options...">Veg</span>
     </div>
+
+    <div class="search">
+    <input id="search" class="searchbox" placeholder="Type to Search..." autofocus>
+    <span class="x"></span>
+    </div>
+
     <ul id="theMenu">
       <li class="dishes">
         <h2>STARTERS &#x1F95F;</h2>
@@ -802,7 +870,7 @@ html {
         <p><b>4th</b> tap will reset <b style="background-color: #fff; border: 1px dotted #eee; padding: 2px 4px;">the dish</b></p>
       </div>
       <div>
-        <p>Tap the coloured blocks at the top to filter your choices, including <span style="color: #fff; background-color: #0c0; font-weight: bold; padding: 0px;">Vegetarian</span> options.</p>
+        <p>Tap the coloured blocks at the top to filter your choices, including <span style="color: #fff; background-color: #0c0; font-weight: bold; padding: 0px;">Vegetarian</span> options. Try using the search box too. </p>
         <p>We made this as a fun project to help you keep track of your adventure through Kungfu Kitchen's extensive menu! The data stays 100% on your phone, we don't see/use/share/sell anything.</p>
         <p>**To start again, tap the 'RESET' button at the bottom of the page.</p>
       </div>
@@ -826,7 +894,7 @@ html {
   $("#liked").html(liked);
   $("#wish").html("WISHLIST: " + wish);
   $("#liked").html("LIKED: " + ok);
-  $("#all").html("VIEW ALL: " + togo);
+//  $("#all").html("VIEW ALL: " + togo);
   }
 
   theMenu.addEventListener("click", function(ev){
@@ -930,7 +998,23 @@ html {
             $(this).html().replace(' / ', '<br/>')
         );
     });
-  });
+
+    $("#search").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#theMenu li").filter(function() {
+        $('.x').show();
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+
+    $('.x').on('click',function(){
+    $('input[id=search]').val('').trigger('keyup');
+    $('.x').hide();
+    });
+});
+
+
+
   </script>
   <!--
   Kungfu Kitchen Personal Menu Tracker Webapp resources:
@@ -939,6 +1023,7 @@ html {
   HTML/CSS/JS http://todomvc.com/examples/vanillajs/
   Modal CSS: https://codepen.io/timothylong/pen/HhAer
   Landscape CSS: https://css-tricks.com/snippets/css/orientation-lock
+  Search JS: https://www.w3schools.com/jquery/jquery_filters.asp
   -->
 </body>
 </html>
