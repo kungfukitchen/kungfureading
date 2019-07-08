@@ -249,7 +249,7 @@
     color: #777;
     padding: 10px 15px;
     text-align: center;
-    border-top: 1px solid #e6e6e6;
+//    border-top: 1px solid #e6e6e6;
     margin-top: 20px;
   }
 
@@ -321,7 +321,7 @@
       white-space: nowrap;
       }
 
-  .filters span#v {
+  .filters span#veg {
     width: 7%;
     background-color: rgba(0, 204, 0, 1);
     font-weight: bold;
@@ -644,7 +644,7 @@ input::input-placeholder {
       <span id="all" onclick="viewall();" title="Click to view the full menu...">VIEW ALL</span>
       <span id="liked" onclick="eatonly();" title="Click to see the dishes you have tried...">LIKED: 0</span>
       <span id="wish" onclick="wishonly();" title="Click to see the dishes you want to try...">WISHLIST: 0</span>
-      <span id="v" onclick="vegonly();" title="Click to see our veg(an) options...">Veg</span>
+      <span id="veg" onclick="vegonly();" title="Click to see our veg(an) options...">Veg</span>
     </div>
 
     <div class="search">
@@ -841,6 +841,7 @@ input::input-placeholder {
       <li class="n"><span>145.</span>Stir Fry Udon with Chicken</li>
       <li class="n"><span>146.</span>Stir Fry Udon with Beef</li>
       <li class="n"><span>147.</span>Stir Fry Udon with Pork</li>
+      <li class="none" style="display:none;">We don't have that on our menu!</li>
     </ul>
     <footer class="footer">
       <h3>Follow us @KungfuReading on<br>
@@ -927,8 +928,9 @@ input::input-placeholder {
   function viewall()
   {
   $( "li.n, li.wish, li.liked, li.no" ).show();
-  $("span#wish, span#liked, span#v").removeClass("on");
+  $("span#wish, span#liked, span#veg").removeClass("on");
   $("span#all").addClass("on");
+  $("input[id=search]").val("");
   window.scrollTo(0, 0);
   location.href = "#filtered";
   };
@@ -938,7 +940,7 @@ input::input-placeholder {
   if (wish !==0) {
   $("li.n, li.liked, li.no" ).hide();
   $("li.wish" ).show();
-  $("span#liked, span#all, span#v").removeClass("on");
+  $("span#liked, span#all, span#veg").removeClass("on");
   $("span#wish").addClass("on");
   window.scrollTo(0, 0);
   location.href = "#filtered";
@@ -953,7 +955,7 @@ input::input-placeholder {
   if (liked !==0) {
     $("li.n, li.wish, li.no" ).hide();
     $("li.liked" ).show();
-    $("span#wish, span#all, span#v").removeClass("on");
+    $("span#wish, span#all, span#veg").removeClass("on");
     $("span#liked").addClass("on");
     window.scrollTo(0, 0);
     location.href = "#filtered";
@@ -967,7 +969,7 @@ input::input-placeholder {
     $("li.n, li.wish, li.no, li.liked" ).hide();
     $("li.v").show();
     $("span#wish, span#liked, span#all").removeClass("on");
-    $("span#v").addClass("on");
+    $("span#veg").addClass("on");
     window.scrollTo(0, 0);
     location.href = "#filtered";
   };
@@ -980,6 +982,7 @@ input::input-placeholder {
   //      localStorage.removeItem("kungfuMenu");
         window.scrollTo(0, 0);
         location.reload();
+        $("input[id=search]").val("");
       } else { window.scrollTo(0, 0); }};
 
   var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
@@ -1004,7 +1007,9 @@ input::input-placeholder {
       $("#theMenu li").filter(function() {
         $('.x').show();
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-      });
+      })
+
+
     });
 
     $('.x').on('click',function(){
