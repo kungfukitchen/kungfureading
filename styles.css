@@ -1308,7 +1308,7 @@ hr {
   display: none!important
 }
 .ellipsis {
-  overflow: hidden;
+//  overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.2em
 }
@@ -1553,7 +1553,7 @@ hr {
   }
   .heading-font {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
  .ellipsis {
     text-align: center;
