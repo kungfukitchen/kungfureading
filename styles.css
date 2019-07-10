@@ -1585,7 +1585,7 @@ hr {
 }
 .quotecarousel .square:first-child img.quote {
   height: 50px;
-  opacity: .6;
+  opacity: 1;
 }
 .quotecarousel .square p.italic {
   color: #bbb;
