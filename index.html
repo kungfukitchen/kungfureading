@@ -301,6 +301,11 @@ html += '<p class="h2">Quotes<\/p><p class="italic">Swipe to see more<\/p><\/div
           }
       }
   });
+
+  window.onhashchange = function () {
+    history.pushState(null, null, window.location.href.split("#")[0]);
+  };
+
 </script>
 </body>
 </html>
