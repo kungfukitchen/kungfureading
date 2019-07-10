@@ -273,7 +273,7 @@
       });
 
       function generateQuotes(data) {
-          var html = '<div class="square">';
+        var html = '<div class="square" id="q">';
 html += '<div class="aspect-ratio__content border--tan centered-content p1 align--center"><img class="quote mb0" src="img/quote.svg">';
 html += '<p class="h2">Quotes<\/p><p class="italic">Swipe to see more<\/p><\/div><\/div>';
           if (typeof(data[0]) === 'undefined') {
@@ -294,6 +294,9 @@ html += '<p class="h2">Quotes<\/p><p class="italic">Swipe to see more<\/p><\/div
                   html += '<i>#' + quoteno + '<\/i>';
                   html += '<\/div><\/div>';
               });
+                  html += '<div class="square">';
+                  html += '<div class="aspect-ratio__content centered-content p1 align--center">';
+                  html += '<p class="h2"><a href="#q"><b>&#8617;<\/b><br\/>back<\/a><\/p><\/div><\/div>';
               $('#quotecarousel').append(html);
           }
       }
