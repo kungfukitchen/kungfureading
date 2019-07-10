@@ -1583,7 +1583,7 @@ hr {
 }
 .quotecarousel .square:first-child {
   margin-left: 0;
-  background-color: #fff;
+//  background-color: #fff;
 }
 .quotecarousel .square:first-child img.quote {
   height: 50px;
@@ -1627,5 +1627,4 @@ hr {
 
 .square p.h2.scrollback {
   cursor: pointer;
-  font-weight: bold;
 }
