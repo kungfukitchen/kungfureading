@@ -276,15 +276,15 @@
       });
 
       function generateQuotes(data) {
-        var html = '<div class="square" id="q">';
+        var html = '<div class="square tan">';
 html += '<div class="aspect-ratio__content border--tan centered-content p1 align--center"><img class="quote mb0" src="img/quote.svg">';
-html += '<p class="h2">Quotes<\/p><p class="italic">Swipe to see more<\/p><\/div><\/div>';
+html += '<p class="h2">Quotes<\/p><p class="italic">Swipe to see more <\/p><\/div><\/div>';
           if (typeof(data[0]) === 'undefined') {
               return null;
           } else {
               $.each(data, function(index, row) {
                   quoteno = index + 1;
-                  alt = index%2==0?'tan':'';
+                  alt = index%2==0?'':'tan';
                   html += '<div class="square ' + alt +'">';
                   html += '<div class="aspect-ratio__content border--tan centered-content p1 align--center">';
                   html += '<img class="quote mb1" src="img/quote.svg">';
