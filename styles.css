@@ -1624,3 +1624,8 @@ hr {
 .square p.h3 {
   color: #585c62;
 }
+
+.square p.h2.scrollback {
+  cursor: pointer;
+  font-weight: bold;
+}
