@@ -1568,8 +1568,10 @@ hr {
   display: flex;
   min-width: 100%;
   min-height: 200px;
-  overflow-x: auto;
+  overflow-x: scroll;
   overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar { display: none; }
 }
 .quotecarousel .square {
   min-width: 200px;

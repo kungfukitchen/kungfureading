@@ -51,7 +51,7 @@
     </div><!-- Philosophy -->
     <div class="grid-column span-6 mt1 one">
       <div class="square">
-        <div class="aspect-ratio__content bg--tan centered-content border--tan p2">
+        <div class="aspect-ratio__content bg--tan centered-content border--tan p1">
           <p class="h2 mb1 heading-font text--primary-color">Reading's Most Authentic Chinese Restaurant</p>
           <p class="ellipsis">Serving traditional specialities from all parts of China.</p>
         </div>
@@ -142,7 +142,7 @@
       </div><!-- 1st testimonial -->
       <div class="grid-column span-6 mt1 order-2 testimonial">
         <div class="square">
-          <div class="aspect-ratio__content border--tan centered-content p2 align--center">
+          <div class="aspect-ratio__content border--tan centered-content p1 align--center">
             <img class="quote mb1" src="img/quote.svg">
             <p class="h3 italic">Wow, it was amazing... A simple place with genuine food... Loved everything!</p>
             <p class="italic">– <a href="https://twitter.com/ClaysHyderabadi">@ClaysHyderabadi</a></p>
@@ -165,7 +165,7 @@
       </div><!-- 2nd testimonial -->
       <div class="grid-column span-6 mt1 order-5 testimonial">
         <div class="square">
-          <div class="aspect-ratio__content centered-content border--tan p2 align--center">
+          <div class="aspect-ratio__content centered-content border--tan p1 align--center">
             <img class="quote mb1" src="img/quote.svg">
             <p class="h3 italic">Fabulous authentic food. Warm and welcoming service.</p>
             <p class="italic">– T</p>
@@ -183,7 +183,7 @@
           <!-- 2nd testimonial -->
           <div class="grid-column span-12 mt1 order-5 testimonial">
             <div class="square">
-              <div class="aspect-ratio__content centered-content border--tan p2 align--center">
+              <div class="aspect-ratio__content centered-content border--tan p1 align--center">
                 <img class="quote mb1" src="img/quote.svg">
                 <p class="h3 italic">山东全羊汤 味道不错</p>
                 <p class="italic">– Yuqi</p>
@@ -209,7 +209,7 @@
           <!-- 2nd testimonial -->
           <div class="grid-column span-12 mt1 order-5 offset-half testimonial">
             <div class="square">
-              <div class="aspect-ratio__content centered-content border--tan p2 align--center">
+              <div class="aspect-ratio__content centered-content border--tan p1 align--center">
                 <img class="quote mb1" src="img/quote.svg">
                 <p class="h3 italic">A restaurant with a big personality. Great addition to Reading.</p>
                 <p class="italic">– Darren</p>
@@ -299,16 +299,19 @@ html += '<p class="h2">Quotes<\/p><p class="italic">Swipe to see more<\/p><\/div
               });
                   html += '<div class="square">';
                   html += '<div class="aspect-ratio__content centered-content p1 align--center">';
-                  html += '<p class="h2"><a href="#q"><b>&#8617;<\/b><br\/>back<\/a><\/p><\/div><\/div>';
+                  html += '<p class="h2 scrollback"><a name="scrollback">&#8617;<br\/>back<\/a><\/p><\/div><\/div>';
               $('#quotecarousel').append(html);
           }
       }
   });
 
-  window.onhashchange = function () {
-    history.pushState(null, null, window.location.href.split("#")[0]);
-  };
+  $(document).ready(function(){
+  $('.quotecarousel').on('click', '.scrollback', function() {
+      $(".quotecarousel").scrollLeft(0);
+    });
+  });
 
+  });
 </script>
 </body>
 </html>
