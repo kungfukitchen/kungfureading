@@ -266,6 +266,7 @@
       var data;
       $.ajax({
           type: "GET",
+          crossDomain: true,
           url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRG7WQ1r3SBdA0YF6k9DBzmvQzirjJj00xpPwIf7OQlhXeMV9oc-qHVrmGCOIHoNo7dXRIcjqNav83F/pub?gid=1071840821&single=true&output=csv",
           dataType: "text",
           success: function(response) {
