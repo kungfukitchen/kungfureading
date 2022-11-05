@@ -90,8 +90,7 @@ img {
   border-style: none
 }
 
-img-xmas {
-  border-style: none
+imgxmas {
   border-radius: 50%;
   max-width: 33%;
   height: auto;
