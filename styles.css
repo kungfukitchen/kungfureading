@@ -1356,8 +1356,9 @@ hr {
     font-size: 4.375rem
   }
   .h2, h2 {
-    font-size: 1.2rem
+    font-size: 1vmax
   }
+	
   .h3, h3 {
     font-size: 1.1rem;
     margin-bottom: .5em;
