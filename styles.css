@@ -1356,7 +1356,7 @@ hr {
     font-size: 4.375rem
   }
   .h2, h2 {
-    font-size: 20vw
+    font-size: 3rem
   }
 	
   .h3, h3 {
@@ -1526,9 +1526,15 @@ hr {
   .h1, h1 {
     font-size: 3.5rem
   }
+	
+	.h2, h2 {
+font-size: 2rem
+	}
+	
   .span-6 .square {
     position: relative
   }
+	
   .span-6 .square:before {
     display: block;
     content: "";
