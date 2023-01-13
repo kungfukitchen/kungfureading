@@ -342,7 +342,7 @@ img::-moz-selection {
   padding-top: 100%
 }
 .square>.aspect-ratio__content {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
