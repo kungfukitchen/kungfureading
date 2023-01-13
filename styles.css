@@ -1,6 +1,15 @@
 @charset "UTF-8";
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 
+.circle img {
+transition: 1s ease;
+}
+
+.circle img:hover {
+border-radius:50%;
+transition: 1s ease;
+}
+
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
