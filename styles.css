@@ -235,7 +235,6 @@ textarea {
 }
 a:active,
 a:hover {
-  outline: 0;
   text-decoration: underline;
 }
 [role="button"],
