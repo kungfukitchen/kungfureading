@@ -1733,11 +1733,10 @@ hr {
     bottom: 0;
   }
   .heading-font {
-    text-align: center;
     font-size: 2rem;
   }
   .ellipsis {
-    text-align: center;
+    text-align: left;
   }
   .font--heading a {
     color: #fff;
