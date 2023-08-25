@@ -549,12 +549,12 @@ fieldset[disabled] a.btn {
   border-color: #b5b8bd;
 }
 .container {
-  margin-left: auto;
-  margin-right: auto;
   max-width: 1200px;
   padding-left: 0.8rem;
   padding-right: 0.8rem;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 canvas,
 iframe,
@@ -1578,7 +1578,6 @@ hr {
     flex-basis: 50%;
     max-width: 50%;
   }
-  .offset-half,
   .offset-one-fourth {
     margin-left: 0;
   }
@@ -1700,16 +1699,16 @@ hr {
   h1 {
     font-size: 3.5rem;
   }
-  .span-6 .square {
+  .span-6 .square, .span-6 .rectangle {
     position: relative;
   }
-  .span-6 .square:before {
+  .span-6 .square:before,  .span-6 .rectangle:before {
     display: block;
     content: "";
     width: 100%;
     padding-top: 48.48485%;
   }
-  .span-6 .square > .aspect-ratio__content {
+  .span-6 .square > .aspect-ratio__content, .span-6 .rectangle > .aspect-ratio__content {
     position: absolute;
     top: 0;
     left: 0;
