@@ -1,0 +1,86 @@
+---
+import Button from "./atoms/button.astro";
+import SocialIcon from "./atoms/SocialIcon.astro";
+/*import Gallery from "./foodGallery";*/
+
+interface Props {
+  title: string;
+  description: string;
+  address: string;
+  addressLink: string;
+  hours: string;
+  instagram: string;
+  whatsapp: string;
+  wechat: string;
+  tel: string;
+}
+
+const {
+  title,
+  description,
+  address,
+  addressLink,
+  hours,
+  instagram,
+  wechat,
+  tel,
+  whatsapp,
+} = Astro.props;
+---
+
+<article class="grid-cell">
+  <section class="mb-4">
+    <section class="flex justify-between items-center mb-3">
+      <h3>
+        {title}
+      </h3>
+      {/* Socials */}
+      <div class="flex gap-2">
+        {
+          instagram && (
+            <a href={instagram}>
+              <SocialIcon icon="instagram" alt="Instagram" />
+            </a>
+          )
+        }
+        {
+          whatsapp && (
+            <a href={`/${whatsapp}`}>
+              <SocialIcon icon="whatsapp" alt="WhatsApp" />
+            </a>
+          )
+        }
+        {
+          wechat && (
+            <a href={wechat}>
+              <SocialIcon icon="wechat" alt="WeChat" />
+            </a>
+          )
+        }
+        {
+          tel && (
+            <a href={`tel:${tel}`}>
+              <SocialIcon icon="phone" alt="Call" />
+            </a>
+          )
+        }
+      </div>
+    </section>
+
+    <p class="font-serif mb-2">
+      {description}
+    </p>
+
+    <p class="font-serif mb-2 text-pretty">
+      <b>Find us</b>: <a href={addressLink} title="Find us on Google Maps"
+        >{address}</a
+      >
+    </p>
+
+    <p class="font-serif text-pretty"><b>Opening hours</b>: {hours}</p>
+  </section>
+
+  {/*<Gallery client:load />*/}
+
+  <slot />
+</article>

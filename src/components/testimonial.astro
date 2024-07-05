@@ -1,0 +1,22 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  quote: string;
+  author: string;
+  source: string;
+}
+
+const { quote, author, source } = Astro.props;
+---
+
+<article class="grid-cell font-serif flex flex-col justify-center">
+  <Icon name="mdi:comment-quote" class="text-red text-lg mb-4" />
+  <p class="text-pretty mb-2 italic">
+    {quote}
+  </p>
+  <p class="no-wrap">
+    —
+    <a href={source} title={author}>{author} </a>
+  </p>
+</article>

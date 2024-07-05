@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/atoms/button.astro";
+const currentPath = Astro.url.pathname;
+---
+
+<Layout title="404">
+  <h2 class="mt-20">404</h2>
+  <p class="mb-4">Oh no, this page wasn't found!</p>
+  <Button cta="Return home" link="/" />
+</Layout>

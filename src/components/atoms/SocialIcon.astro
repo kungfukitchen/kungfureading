@@ -1,0 +1,10 @@
+---
+import { Icon } from "astro-icon/components";
+interface Props {
+  icon: string;
+  alt: string;
+}
+const { icon, alt } = Astro.props;
+---
+
+<Icon class="text-red hover:text-black text-2xl" name=`mdi:${icon}` title={alt} />

@@ -1,0 +1,25 @@
+---
+import logo from "../../src/assets/kfk.webp";
+import Image from "astro/components/Image.astro";
+import Button from "./atoms/button.astro";
+---
+
+<header class="flex gap-x-4 lg:flex-row flex-col mb-8">
+  <Image
+    src={logo}
+    alt="Kungfu Kitchen"
+    class="md:w-1/2 lg:self-start self-center"
+    loading="eager"
+  />
+  <h1 hidden>Kungfu Kitchen</h1>
+  <section
+    class="bg-tan p-6 flex flex-col justify-end h-fit w-full lg:self-end self-center rounded"
+  >
+    <h2>Reading's favourite Chinese restaurant</h2>
+    <p class="font-serif mb-2">
+      Welcome to Kungfu Kitchen! We are a family-run restaurant serving
+      traditional specialities and authentic dishes from across China.
+    </p>
+    <Button cta="About Kungfu Kitchen" link="about" />
+  </section>
+</header>
