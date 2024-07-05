@@ -1,7 +1,7 @@
 ---
 import Button from "./atoms/button.astro";
 import SocialIcon from "./atoms/SocialIcon.astro";
-/*import Gallery from "./foodGallery";*/
+import Gallery from "./foodGallery";
 
 interface Props {
   title: string;
@@ -80,7 +80,7 @@ const {
     <p class="font-serif text-pretty"><b>Opening hours</b>: {hours}</p>
   </section>
 
-  {/*<Gallery client:load />*/}
+  <Gallery client:load />
 
   <slot />
 </article>
