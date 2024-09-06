@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
+import FavIcon from "../../public/favicon.ico";
 import { ViewTransitions } from "astro:transitions";
 
 interface Props {
@@ -36,16 +36,16 @@ const { title } = Astro.props;
       @tailwind utilities;
       @tailwind variants;
       p {
-        @apply max-w-[80ch] text-pretty font-serif;
+        @apply max-w-[80ch] text-pretty leading-[1.75] font-serif mb-1;
       }
       h2 {
-        @apply text-red font-bold text-4xl mb-4 text-balance;
+        @apply text-red font-bold text-4xl text-balance;
       }
       h3 {
         @apply text-red font-bold text-2xl text-balance tracking-normal;
       }
       a {
-        @apply text-red;
+        @apply text-red hover:text-black;
       }
       /* Default border */
       .grid-cell {

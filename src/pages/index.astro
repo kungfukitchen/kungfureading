@@ -5,30 +5,65 @@ import Location from "../components/location.astro";
 import Testimonial from "../components/testimonial.astro";
 import Footer from "../components/footer.astro";
 import Button from "../components/atoms/button.astro";
+import Restaurant from "../../src/assets/restaurant_food.webp";
+import Cafe from "../../src/assets/cafe_food.webp";
 ---
 
 <Layout title="Kungfu Kitchen">
-  <Header />
+  <Header
+    title="Reading's favourite Chinese restaurant"
+    description="Welcome to Kungfu Kitchen. We are a family-run restaurant serving traditional specialities and authentic dishes from across China."
+  />
 
   <!-- Locations -->
   <section class="grid md:grid-cols-2 gap-4 mb-8">
     <Location
+      nav
       description=`Reading's best-reviewed Chinese restaurant, plus full bar. Enjoy traditional specialities and authentic dishes from across China.`
-      whatsapp="yes"
-      instagram="yes"
-      tel="yes"
-      wechat="yes"
+      instagram="https://instagram.com/kungfureading"
+      tel="07587 577966"
+      wechat="weixin://dl/chat?{Yipin-Joanna521}"
       title="Kungfu Kitchen"
       hours="Mon-Sun 11.30 am-10 pm"
       address="62 Christchurch Road, Reading, RG2 7AZ"
       addressLink="https://maps.app.goo.gl/Neh8wVvKxAtpxJXY6"
+      imagePath={Restaurant}
+      imageAlt="Food from Kungfu Kitchen"
+      imageTitle="Food from Kungfu Kitchen"
     >
-      <nav class="flex gap-4">
-        <Button cta="Menu" link="/menu.pdf" />
-        <Button cta="Vegan menu" link="/vegan.pdf" />
-        <Button cta="Bubble tea" link="/bubble_tea.pdf" />
+      <nav class="space-y-4">
+        <div class="flex flex-wrap gap-2">
+          <Button cta="Menu" link="/menu.pdf" />
+          <Button cta="Vegan menu" link="vegan.pdf" />
+        </div>
+        <div>
+          <Button cta="Book now" link="tel:07587577966" text="lg" />
+        </div>
       </nav>
     </Location>
+
+    <Location
+      nav
+      description=`Cantonese-style cuisine, noodles, dim sum, and Chinese and English breakfasts.`
+      tel="07587577966"
+      wechat="weixin://dl/chat?{Yipin-Joanna521}"
+      title="New: Kungfu Kafe"
+      hours="Mon-Sun 11.30 am-10 pm"
+      address="80 Christchurch Road, Reading, RG2 7AZ"
+      addressLink="https://maps.app.goo.gl/DkwvxZWV1CxhLwT39"
+      imagePath={Cafe}
+      imageAlt="Food from Kungfu Kafe"
+      imageTitle="Food from Kungfu Kafe"
+    >
+      <nav class="space-y-4">
+        <div class="flex flex-wrap gap-2">
+          <Button cta="Menu" link="/cafe.pdf" />
+        </div>
+        <div>
+          <Button cta="Book now" link="tel:07587577966" text="lg" />
+        </div>
+      </nav></Location
+    >
   </section>
 
   <!-- Testimonials-->

@@ -2,13 +2,15 @@
 interface Props {
   cta: string;
   link: string;
+  text?: "lg" | "md";
 }
 
-const { cta, link } = Astro.props;
+const { cta, link, text = "md" } = Astro.props;
 ---
 
-<a href={link}>
-  <button class="cta shadow font-bold bg-red text-white px-4 py-2 rounded"
+<a href={link} class="no-underline">
+  <button
+    class=`h-full capitalize ${text=='lg'?'text-2xl' : 'text-lg'} leading-5 cta shadow font-bold bg-red text-white hover:bg-black px-4 py-2 rounded no-underline`
     >{cta}</button
   >
 </a>

@@ -10,7 +10,7 @@ interface Props {
 const { quote, author, source } = Astro.props;
 ---
 
-<article class="grid-cell font-serif flex flex-col justify-center">
+<article class="grid-cell h-fit font-serif flex flex-col justify-start">
   <Icon name="mdi:comment-quote" class="text-red text-lg mb-4" />
   <p class="text-pretty mb-2 italic">
     {quote}
