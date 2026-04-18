@@ -2,4 +2,4 @@
 
 Kungfu Kitchen GitHub pages.
 
-Mostly maintained by [Joe Vaughan](https://joevaughan.net/).
+Casually maintained by Joe Vaughan. Please [jbvaughan1993@gmail.com](contact) Joe if you have any questions.
